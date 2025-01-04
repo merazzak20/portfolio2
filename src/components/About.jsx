@@ -8,13 +8,15 @@ const About = () => {
         <SectionTitle sectionName={"About Me"}></SectionTitle>
       </div>
       <div className="grid md:grid-cols-2">
-        <div className="bg-zinc-700 mt-8 py-8 px-6 rounded-lg">
+        <div className="bg-zinc-800 mt-8 py-8 px-6 rounded-lg">
           <p className="text-justify">
             Hi, I’m Abdur Razzak, a passionate and creative junior web developer
             with a strong foundation in front-end development. I specialize in
             building dynamic, user-friendly websites and applications using
-            modern technologies like MongoDB, Express JS, Node JS, React JS,
-            Tailwind CSS, and DaisyUI.
+            modern technologies like{" "}
+            <span className="bg-[#829a2c] font-bold">
+              MongoDB, Express JS, Node JS, React JS, Tailwind CSS, and DaisyUI.
+            </span>
           </p>
           <br />
           <p className="text-justify">

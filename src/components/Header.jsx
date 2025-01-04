@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo2.png";
 import MobileMenu from "./MobileMenu";
+import { FaDownload } from "react-icons/fa6";
 
 const Header = () => {
   const links = (
@@ -55,8 +56,12 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn btn-outline rounded-full text-[#afd138] hover:bg-[#afd138]">
-            Download Resume
+          <a
+            href="https://drive.google.com/file/d/17rehO2G9AXlp3cMFs1UCXEcq0Fvzv-Gn/view"
+            target="_blank"
+            className="btn btn-outline rounded-full text-[#afd138] hover:bg-[#afd138]"
+          >
+            Download Resume <FaDownload />
           </a>
         </div>
       </div>
