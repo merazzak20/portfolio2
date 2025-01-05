@@ -8,12 +8,12 @@ import { FaDownload } from "react-icons/fa6";
 const Hero = () => {
   return (
     <section className="grid md:grid-cols-2 justify-center items-center sm:pt-12 md:pt-0">
-      <div className="text-left my-5 space-y-2">
-        <h2 className="text-2xl font-semibold">Hello,</h2>
-        <h1 className="text-5xl md:text-7xl font-semibold text-[#afd138] uppercase">
+      <div className="text-left my-5 ">
+        <h2 className="text-2xl font-semibold">Hello - I'm</h2>
+        <h1 className="text-5xl md:text-7xl font-semibold text-[#afd138] uppercase mb-2">
           Abdur Razzak <span className="text-zinc-50 text-6xl">.</span>
         </h1>
-        <h4 className="text-xl">I'm MERN Stack Developer.</h4>
+        <h4 className="text-xl mb-3">I'm MERN Stack Developer.</h4>
         <a
           href="https://drive.google.com/file/d/17rehO2G9AXlp3cMFs1UCXEcq0Fvzv-Gn/view"
           target="_blank"
@@ -21,7 +21,7 @@ const Hero = () => {
         >
           Download Resume <FaDownload></FaDownload>
         </a>
-        <Marquee speed={40} className="">
+        <Marquee speed={40} className="mt-4">
           "Crafting seamless digital experiences, one line of code at a time." -
           "Where creativity meets code welcome to my portfolio." - "Turning
           ideas into impactful web solutions." -
