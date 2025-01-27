@@ -42,18 +42,26 @@ const Hero = () => {
 
         {/* social icons */}
         <div className="join join-vertical fixed left-0 bottom-1/3 rounded-none border-none">
-          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
-            <FaLinkedinIn className="text-xl " />
-          </button>
-          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
-            <FaFacebookSquare className="text-xl " />
-          </button>
-          <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
-            <FaGithub className="text-xl" />
-          </button>
-          <button className="btn border-none join-item bg-[#afd138] text-zinc-50">
-            <ImBehance2 className="text-xl" />
-          </button>
+          <a href="https://www.linkedin.com/in/merazzak20/" target="_blank">
+            <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
+              <FaLinkedinIn className="text-xl " />
+            </button>
+          </a>
+          <a href="https://www.facebook.com/merazzak20" target="_blank">
+            <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
+              <FaFacebookSquare className="text-xl " />
+            </button>
+          </a>
+          <a href="https://github.com/merazzak20" target="_blank">
+            <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
+              <FaGithub className="text-xl" />
+            </button>
+          </a>
+          <a href="https://www.behance.net/merazzak/" target="_blank">
+            <button className="btn border-none join-item bg-[#afd138] text-zinc-50">
+              <ImBehance2 className="text-xl" />
+            </button>
+          </a>
         </div>
       </section>
     </Container>
