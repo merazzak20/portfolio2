@@ -41,7 +41,7 @@ const Hero = () => {
         </div>
 
         {/* social icons */}
-        <div className="join join-vertical fixed left-0 bottom-1/3 rounded-none border-none">
+        <div className="join join-vertical fixed left-0 bottom-1/3 rounded-none border-none z-20">
           <a href="https://www.linkedin.com/in/merazzak20/" target="_blank">
             <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
               <FaLinkedinIn className="text-xl " />

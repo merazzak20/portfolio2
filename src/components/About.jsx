@@ -1,5 +1,7 @@
 import React from "react";
-import me from "../assets/me.png";
+import me from "../assets/me2.png";
+// import me from "../assets/me.png";
+import logo from "../assets/logo2.png";
 import SectionTitle from "./Shared/SectionTitle";
 import Container from "./Shared/Container";
 
@@ -10,8 +12,8 @@ const About = () => {
         <div className="my-5 text-center">
           <SectionTitle sectionName={"About Me"}></SectionTitle>
         </div>
-        <div className="flex flex-col-reverse lg:flex-row items-center">
-          <div className="bg-zinc-800 mt-8 py-8 px-6 rounded-lg lg:w-1/2">
+        <div className="flex flex-col-reverse lg:flex-row ">
+          <div className="bg-zinc-800 mt-8 py-8 px-6 rounded-lg lg:w-1/2 relative">
             <p className="text-justify">
               Hi, I’m Abdur Razzak, a passionate and creative junior web
               developer with a strong foundation in front-end development. I
@@ -40,10 +42,15 @@ const About = () => {
               take my first steps into coding, starting with the basics of HTML
               and CSS, and soon diving into JavaScript to bring ideas to life.
             </p>
+            <img
+              className="w-20 opacity-20 mt-2 absolute bottom-2 right-2"
+              src={logo}
+              alt=""
+            />
           </div>
           <div className="lg:w-1/2 ">
             <img
-              className="md:w-2/3 lg:w-full mx-auto "
+              className="w-2/3 md:w-2/3 lg:5/6 mx-auto "
               src={me}
               alt="Abdur Razzak"
             />

@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "1",
+    "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/1200px-Adobe_Photoshop_CC_icon.svg.png",
+    "label": "Photoshop",
+    "desc": "Design tool"
+  },
+  {
+    "_id": "2",
+    "imgSrc": "https://cdn.freebiesupply.com/logos/large/2x/css3-logo-svg-vector.svg",
+    "label": "CSS",
+    "desc": "User Interface"
+  },
+  {
+    "_id": "8",
+    "imgSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
+    "label": "TailwindCSS",
+    "desc": "User Interface"
+  },
+  {
+    "_id": "3",
+    "imgSrc": "https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png",
+    "label": "JavaScript",
+    "desc": "Interaction"
+  },
+  {
+    "_id": "7",
+    "imgSrc": "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
+    "label": "React",
+    "desc": "Framework"
+  },
+  {
+    "_id": "4",
+    "imgSrc": "https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png",
+    "label": "NodeJS",
+    "desc": "Web Server"
+  },
+  {
+    "_id": "5",
+    "imgSrc": "https://www.manektech.com/storage/developer/1646733543.webp",
+    "label": "ExpressJS",
+    "desc": "Node Framework"
+  },
+  {
+    "_id": "6",
+    "imgSrc": "https://static-00.iconduck.com/assets.00/mongodb-original-icon-921x2048-hvrb89lu.png",
+    "label": "MongoDB",
+    "desc": "Database"
+  }
+]

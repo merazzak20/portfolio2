@@ -73,7 +73,7 @@ const Header = () => {
               target="_blank"
               className="btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
             >
-              Download Resume <FaDownload />
+              Resume <FaDownload />
             </a>
           </div>
         </div>
