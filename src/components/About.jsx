@@ -1,7 +1,7 @@
 import React from "react";
 import me from "../assets/me2.png";
 // import me from "../assets/me.png";
-import logo from "../assets/logo2.png";
+import logo from "../assets/my logo.png";
 import SectionTitle from "./Shared/SectionTitle";
 import Container from "./Shared/Container";
 

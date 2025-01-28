@@ -22,7 +22,7 @@ const Hero = () => {
         </div>
         <div className="my-14 lg:my-6 col-span-12 lg:col-span-7 text-left ">
           <h2 className="text-2xl font-semibold">Hello - I'm</h2>
-          <h1 className="text-5xl md:text-7xl font-semibold text-[#afd138] uppercase mb-2">
+          <h1 className="text-5xl md:text-7xl font-semibold text-[#bfe43b]  mb-2">
             Abdur Razzak
           </h1>
           <h4 className="text-xl mb-3">A MERN Stack Developer.</h4>
@@ -41,7 +41,7 @@ const Hero = () => {
         </div>
 
         {/* social icons */}
-        <div className="join join-vertical fixed left-0 bottom-1/3 rounded-none border-none z-20">
+        <div className="join join-vertical fixed left-0 bottom-28 rounded-none border-none z-20">
           <a href="https://www.linkedin.com/in/merazzak20/" target="_blank">
             <button className="btn join-item border-none bg-[#afd138] text-zinc-50">
               <FaLinkedinIn className="text-xl " />
