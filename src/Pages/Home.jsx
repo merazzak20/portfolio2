@@ -4,6 +4,8 @@ import About from "../components/About";
 import MobileMenu from "../components/MobileMenu";
 import Technologies from "../components/Technologies";
 import Portfolio from "../components/Portfolio";
+import Feedback from "../components/Feedback";
+import Contact from "../components/Contact";
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
       <About></About>
       <Technologies></Technologies>
       <Portfolio></Portfolio>
+      <Feedback></Feedback>
+      <Contact></Contact>
     </div>
   );
 };
