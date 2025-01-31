@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Container from "./Shared/Container";
 import SectionTitle from "./Shared/SectionTitle";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Contact = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,6 +17,13 @@ const Contact = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    const userMessage = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+    console.log(userMessage);
+    e.target.reset();
   };
   return (
     <div>
