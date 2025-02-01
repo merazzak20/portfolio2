@@ -6,6 +6,7 @@ import Login from "../Pages/Login";
 import Dashboard from "../layout/Dashboard";
 import Addprojects from "../Pages/Dashboard/AdminRoutes/AddProjects";
 import AddFeedback from "../Pages/Dashboard/AdminRoutes/AddFeedback";
+import AllMessage from "../Pages/Dashboard/AdminRoutes/AllMessage";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: "addFeedback",
         element: <AddFeedback></AddFeedback>,
+      },
+      {
+        path: "allMessages",
+        element: <AllMessage></AllMessage>,
       },
     ],
   },

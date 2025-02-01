@@ -40,7 +40,7 @@ const Contact = () => {
     e.target.reset();
   };
   return (
-    <div>
+    <div className="mt-14">
       <Container>
         <div className="flex flex-col md:flex-row items-center justify-center bg-zinc-900 p-6 rounded-md">
           <div className="w-full md:w-1/2 p-6">

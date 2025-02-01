@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { uploadImage } from "../../../components/API/utils";
+import toast from "react-hot-toast";
 
 const AddFeedback = () => {
   const axiosPublic = useAxiosPublic();
@@ -23,15 +24,16 @@ const AddFeedback = () => {
       review,
       rating,
     };
-    console.log(reviewInfo);
+    // console.log(reviewInfo);
 
-    // try {
-    //   await axiosPublic.post("/projects", projectInfo);
-    //   form.reset();
-    //   toast.success("Successfuly Add.👍");
-    // } catch (err) {
-    //   toast.error(err.message);
-    // }
+    try {
+      await axiosPublic.post("/feedbacks", reviewInfo);
+      setFormData({ name: "", review: "" });
+      form.reset();
+      toast.success("Successfuly Add.👍");
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white text-gray-700">
@@ -80,7 +82,7 @@ const AddFeedback = () => {
             htmlFor="review"
             className="block text-lg font-medium text-gray-700"
           >
-            review
+            Review
           </label>
           <textarea
             id="review"

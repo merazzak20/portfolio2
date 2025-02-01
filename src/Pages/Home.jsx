@@ -16,8 +16,8 @@ const Home = () => {
       <About></About>
       <Technologies></Technologies>
       <Portfolio></Portfolio>
-      <Feedback></Feedback>
       <Contact></Contact>
+      <Feedback></Feedback>
     </div>
   );
 };

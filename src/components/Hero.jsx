@@ -20,7 +20,7 @@ const Hero = () => {
             alt="Abdur Razzak Portait"
           />
         </div>
-        <div className="my-14 lg:my-6 col-span-12 lg:col-span-7 text-left ">
+        <div className="my-28 sm:my-16 md:my-24 lg:my-6 col-span-12 lg:col-span-7 text-left ">
           <h2 className="text-2xl font-semibold">Hello - I'm</h2>
           <h1 className="text-5xl md:text-7xl font-semibold  mb-2 bg-gradient-to-r from-[#c0eb4a] to-zinc-950 bg-clip-text text-transparent">
             {/* bg-gradient-to-r from-emerald-500 to-zinc-800 bg-clip-text text-transparent */}

@@ -1,6 +1,6 @@
 import React from "react";
 import MenuItem from "./MenuItem";
-import { MdAssignmentAdd } from "react-icons/md";
+import { MdAssignmentAdd, MdMessage } from "react-icons/md";
 import { GrArticle } from "react-icons/gr";
 
 const AdminMenu = () => {
@@ -14,6 +14,7 @@ const AdminMenu = () => {
         address="/dashboard"
       />
       <MenuItem icon={GrArticle} label="Add Feedback" address="addFeedback" />
+      <MenuItem icon={MdMessage} label="All Messages" address="allMessages" />
     </>
   );
 };
