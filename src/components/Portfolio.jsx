@@ -26,7 +26,7 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
           {projects?.map((project) => (
             <div key={project._id}>
-              <div className="card card-compact bg-zinc-800 shadow-xl border border-zinc-600 group p-2">
+              <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
                 <figure className="overflow-hidden ">
                   <img
                     className=" group-hover:scale-110 transition"

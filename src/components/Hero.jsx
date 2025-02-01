@@ -22,7 +22,8 @@ const Hero = () => {
         </div>
         <div className="my-14 lg:my-6 col-span-12 lg:col-span-7 text-left ">
           <h2 className="text-2xl font-semibold">Hello - I'm</h2>
-          <h1 className="text-5xl md:text-7xl font-semibold text-[#bfe43b]  mb-2 bg-gradient-to-r from-[#bfe43b] to-[#4e6303] bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-semibold  mb-2 bg-gradient-to-r from-[#c0eb4a] to-zinc-950 bg-clip-text text-transparent">
+            {/* bg-gradient-to-r from-emerald-500 to-zinc-800 bg-clip-text text-transparent */}
             Abdur Razzak
           </h1>
           <h4 className="text-xl mb-3">A MERN Stack Developer.</h4>

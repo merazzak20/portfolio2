@@ -69,7 +69,7 @@ const Header = () => {
           {/* Download Resume Button */}
           <div className="navbar-end">
             <a
-              href="https://drive.google.com/file/d/17rehO2G9AXlp3cMFs1UCXEcq0Fvzv-Gn/view"
+              href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view?usp=sharing"
               target="_blank"
               className="btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
             >
