@@ -6,6 +6,7 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 import toast from "react-hot-toast";
 import { AiOutlineMail, AiOutlineWhatsApp } from "react-icons/ai";
 import { FiMapPin } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const axiosPublic = useAxiosPublic();
@@ -17,20 +18,45 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = async (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-  const handleSubmit = (e) => {
+  // const handleChange = async (e) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
     const userMessage = {
-      name: formData.name,
-      email: formData.email,
+      name: "",
+      email: "",
+      message: "",
+    };
+    const sendMail = {
+      from_name: formData.name,
+      from_email: formData.email,
       message: formData.message,
+      to_name: "Abdur Razzak", // Add the recipient's name here
+      reply_to: formData.email, // Reply-to email (optional)
     };
     try {
-      axiosPublic.post("/messages", userMessage);
-      form.reset();
+      await axiosPublic.post("/messages", userMessage);
+      await emailjs
+        .send(
+          import.meta.env.VITE_SERVICE_KEY,
+          import.meta.env.VITE_TEMPLATE_KEY,
+          sendMail,
+          import.meta.env.VITE_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            console.log("SUCCESS!");
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+      setFormData(
+        (formData.name = ""),
+        (formData.email = ""),
+        (formData.message = "")
+      );
       toast.success("Successfuly Add.👍");
     } catch (err) {
       toast.error(err.message);
@@ -91,7 +117,9 @@ const Contact = () => {
                   type="text"
                   name="name"
                   value={formData.name}
-                  onChange={handleChange}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   placeholder="name"
                   className="w-full px-4 py-2 border-none rounded-none focus:outline-none focus:ring-2 bg-zinc-900"
                   required
@@ -103,7 +131,9 @@ const Contact = () => {
                   type="email"
                   name="email"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   placeholder="email"
                   className="w-full px-4 py-2 border-none rounded-none focus:outline-none focus:ring-2 bg-zinc-900"
                   required
@@ -114,7 +144,9 @@ const Contact = () => {
                 <textarea
                   name="message"
                   value={formData.message}
-                  onChange={handleChange}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   rows="4"
                   placeholder="message"
                   className="w-full px-4 py-2 border-none rounded-none focus:outline-none focus:ring-2 bg-zinc-900"

@@ -8,7 +8,4 @@ const Container = ({ children }) => {
   );
 };
 
-// i8DToYYNGDF8mJzG
-// infomerazzak
-
 export default Container;

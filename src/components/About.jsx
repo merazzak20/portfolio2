@@ -9,7 +9,7 @@ const About = () => {
   return (
     <section>
       <Container>
-        <div className="my-5 text-center">
+        <div className="my-5 hidden md:block text-center">
           <SectionTitle sectionName={"About Me"}></SectionTitle>
         </div>
         <div className="flex flex-col-reverse lg:flex-row ">

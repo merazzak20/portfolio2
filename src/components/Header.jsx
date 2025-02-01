@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import logo from "../assets/my logo.png";
 import { FaDownload } from "react-icons/fa6";
 import Container from "./Shared/Container";
 import { motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { X } from "lucide-react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
   const links = (
     <>
@@ -16,6 +18,11 @@ const Header = () => {
       <li>
         <a href="/">Item 3</a>
       </li>
+      {user && (
+        <li>
+          <a href="/dashboard">Dashboard</a>
+        </li>
+      )}
     </>
   );
 
@@ -27,6 +34,11 @@ const Header = () => {
       <li>
         <a href="/">Item 3</a>
       </li>
+      {user && (
+        <li>
+          <a href="/dashboard">Dashboard</a>
+        </li>
+      )}
       <li>
         <a
           href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view?usp=sharing"
