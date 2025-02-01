@@ -65,7 +65,7 @@ const Addprojects = () => {
               setFormData({ ...formData, title: e.target.value })
             }
             value={formData.title}
-            placeholder="Enter class name"
+            placeholder="Enter project name"
             className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
             required
           />
@@ -164,7 +164,7 @@ const Addprojects = () => {
           <textarea
             id="details"
             name="details"
-            placeholder="Enter class details"
+            placeholder="Enter project details"
             onChange={(e) =>
               setFormData({ ...formData, details: e.target.value })
             }

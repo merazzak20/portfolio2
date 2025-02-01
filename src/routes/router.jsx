@@ -5,6 +5,7 @@ import Register from "../Register";
 import Login from "../Pages/Login";
 import Dashboard from "../layout/Dashboard";
 import Addprojects from "../Pages/Dashboard/AdminRoutes/AddProjects";
+import AddFeedback from "../Pages/Dashboard/AdminRoutes/AddFeedback";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Addprojects></Addprojects>,
+      },
+      {
+        path: "addFeedback",
+        element: <AddFeedback></AddFeedback>,
       },
     ],
   },
