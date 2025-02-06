@@ -18,11 +18,22 @@ const Header = () => {
           className={({ isActive }) =>
             `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
           }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
+          }
           to="/about"
         >
           About
         </NavLink>
       </li>
+
       {user && (
         <li>
           <a href="/dashboard">Dashboard</a>
@@ -38,11 +49,22 @@ const Header = () => {
           className={({ isActive }) =>
             `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
           }
+          to="/"
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
+            `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
+          }
           to="/about"
         >
           About
         </NavLink>
       </li>
+
       {user && (
         <li>
           <a href="/dashboard">Dashboard</a>
