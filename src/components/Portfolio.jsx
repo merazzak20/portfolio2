@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { IoIosLink } from "react-icons/io";
 import { MdReadMore } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
 
 const Portfolio = () => {
   const axiosPublic = useAxiosPublic();
@@ -29,7 +30,7 @@ const Portfolio = () => {
               <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
                 <figure className="overflow-hidden ">
                   <img
-                    className=" group-hover:scale-110 transition"
+                    className=" group-hover:scale-110 transition rounded-md"
                     src={project?.imgSrc}
                     alt={project?.title}
                   />
@@ -38,6 +39,7 @@ const Portfolio = () => {
                   <h2 className="card-title text-zinc-50 font-bold">
                     {project?.title}
                   </h2>
+                  <p>{project?.details?.slice(0, 110)}...</p>
                   <div className="space-x-2">
                     {project?.tags?.map((tag, idx) => (
                       <div
@@ -49,11 +51,17 @@ const Portfolio = () => {
                     ))}
                   </div>
                   <div className="text-right flex gap-2">
-                    <Link className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]">
+                    <Link
+                      to={project?.liveLink}
+                      className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
+                    >
                       <IoIosLink className="text-xl text-zinc-800" />
                     </Link>
-                    <Link className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]">
-                      <MdReadMore className="text-xl text-zinc-800" />
+                    <Link
+                      to={project?.repoLink}
+                      className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
+                    >
+                      <FaGithub className="text-xl text-zinc-800" />
                     </Link>
                   </div>
                 </div>

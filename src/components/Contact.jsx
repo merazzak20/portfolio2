@@ -10,8 +10,8 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const axiosPublic = useAxiosPublic();
-  const { user } = useContext(AuthContext);
-  console.log(user);
+  const { user, loading } = useContext(AuthContext);
+  console.log(loading);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,9 +24,9 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userMessage = {
-      name: "",
-      email: "",
-      message: "",
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
     };
     const sendMail = {
       from_name: formData.name,
@@ -57,7 +57,7 @@ const Contact = () => {
         (formData.email = ""),
         (formData.message = "")
       );
-      toast.success("Successfuly Add.👍");
+      toast.success("Successfully Send.👍");
     } catch (err) {
       toast.error(err.message);
     }
@@ -155,7 +155,7 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#AFD138] text-zinc-50 py-2 px-4 rounded-none hover:bg-[#AFD138] transition"
+                className="w-full bg-[#AFD138] text-zinc-800 font-semibold py-2 px-4 rounded-none hover:bg-[#9fbe31] transition"
               >
                 Send Message
               </button>

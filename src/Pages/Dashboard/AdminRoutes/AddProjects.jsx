@@ -85,6 +85,7 @@ const Addprojects = () => {
             name="image"
             accept="image/*"
             className="file-input file-input-bordered w-full rounded-none"
+            required
           />
         </div>
 

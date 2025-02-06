@@ -6,8 +6,14 @@ import Technologies from "../components/Technologies";
 import Portfolio from "../components/Portfolio";
 import Feedback from "../components/Feedback";
 import Contact from "../components/Contact";
+import { useNavigation } from "react-router-dom";
 
 const Home = () => {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === "loading";
+  if (isLoading) {
+    return "loading.....";
+  }
   return (
     <div className="">
       <div className="">
