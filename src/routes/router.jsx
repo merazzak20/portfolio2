@@ -7,6 +7,8 @@ import Dashboard from "../layout/Dashboard";
 import Addprojects from "../Pages/Dashboard/AdminRoutes/AddProjects";
 import AddFeedback from "../Pages/Dashboard/AdminRoutes/AddFeedback";
 import AllMessage from "../Pages/Dashboard/AdminRoutes/AllMessage";
+import PrivateRouter from "./PrivateRouter";
+import AboutPage from "../Pages/AboutPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,9 +20,13 @@ export const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/register",
-        element: <Register></Register>,
+        path: "/about",
+        element: <AboutPage></AboutPage>,
       },
+      // {
+      //   path: "/register",
+      //   element: <Register></Register>,
+      // },
     ],
   },
   {
@@ -29,7 +35,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: (
+      <PrivateRouter>
+        <Dashboard></Dashboard>
+      </PrivateRouter>
+    ),
     children: [
       {
         path: "/dashboard",

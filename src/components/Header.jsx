@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
 import { X } from "lucide-react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
@@ -13,10 +14,7 @@ const Header = () => {
   const links = (
     <>
       <li>
-        <a href="/">Item 1</a>
-      </li>
-      <li>
-        <a href="/">Item 3</a>
+        <Link to="/about">About</Link>
       </li>
       {user && (
         <li>
@@ -29,10 +27,12 @@ const Header = () => {
   const mobileLinks = (
     <>
       <li>
-        <a href="/">Item 1</a>
+        <Link to="/">
+          <img className="w-3/12 mx-auto" src={logo} alt="Abdur Razzak" />
+        </Link>
       </li>
       <li>
-        <a href="/">Item 3</a>
+        <Link to="/about">About</Link>
       </li>
       {user && (
         <li>
@@ -52,7 +52,7 @@ const Header = () => {
   );
 
   return (
-    <header className="fixed top-0 left-0 w-full z-40 bg-gradient-to-b from-zinc-900 to-zinc-900/0">
+    <header className="fixed top-0 left-0 w-full z-40 bg-gradient-to-b from-zinc-950 to-zinc-900/0 ">
       <Container>
         <div className="navbar flex items-center">
           {/* Logo and Navigation for Larger Devices */}
@@ -63,12 +63,13 @@ const Header = () => {
           </div>
 
           {/* Horizontal Links */}
-          <div className="navbar-center hidden lg:flex">
+          {/* <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
-          </div>
+          </div> */}
 
           {/* Download Resume Button */}
           <div className="navbar-end">
+            <ul className="menu menu-horizontal px-1">{links}</ul>
             <div className="hidden md:inline-block">
               <a
                 href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view?usp=sharing"

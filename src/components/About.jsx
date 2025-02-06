@@ -4,6 +4,7 @@ import me from "../assets/me2.png";
 import logo from "../assets/my logo.png";
 import SectionTitle from "./Shared/SectionTitle";
 import Container from "./Shared/Container";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -42,6 +43,11 @@ const About = () => {
               take my first steps into coding, starting with the basics of HTML
               and CSS, and soon diving into JavaScript to bring ideas to life.
             </p>
+            <Link to="/about">
+              <button className="btn bg-[#afd138] rounded-none border-none btn-sm mt-4 hover:bg-[#aed936]">
+                Learn More
+              </button>
+            </Link>
             <img
               className="w-20 opacity-20 mt-2 absolute bottom-2 right-2"
               src={logo}

@@ -18,7 +18,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, password } = formData;
-    const user = { name, email };
+    const dbUser = { name, email };
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (userCredential) => {
@@ -28,7 +28,7 @@ const Register = () => {
         await updateProfile(user, { displayName: name });
 
         // Store user info in the database
-        await axiosPublic.post(`/user/${email}`, user);
+        await axiosPublic.post(`/user/${email}`, dbUser);
 
         console.log("User registered and updated:", user);
       })

@@ -26,3 +26,6 @@ body,
 .interFont {
   font-family: "Inter", serif;
 }
+.active {
+  background: #b9ff00;
+}

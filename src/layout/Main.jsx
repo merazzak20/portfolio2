@@ -7,7 +7,9 @@ const Main = () => {
   return (
     <div className="interFont">
       <Header></Header>
-      <Outlet></Outlet>
+      <div className="mx-auto min-h-[calc(100vh-288px)]">
+        <Outlet></Outlet>
+      </div>
       <Footer></Footer>
     </div>
   );

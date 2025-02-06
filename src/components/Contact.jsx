@@ -93,7 +93,7 @@ const Contact = () => {
               <div className="flex items-center text-zinc-50">
                 <AiOutlineWhatsApp className="text-xl text-zinc-500 mr-2" />
                 <a
-                  href="https://wa.me/yourwhatsappnumber"
+                  href="https://wa.me/+8801629122133"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
