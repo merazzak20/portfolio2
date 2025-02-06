@@ -7,6 +7,9 @@ import { IoIosLink } from "react-icons/io";
 import { MdReadMore } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Portfolio = () => {
   const axiosPublic = useAxiosPublic();
@@ -18,15 +21,52 @@ const Portfolio = () => {
     },
   });
   console.log(projects);
+  var settings = {
+    // dots: true,
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div>
       <Container>
         <div className="my-5">
           <SectionTitle sectionName={"My Portfolios"}></SectionTitle>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
+        <Slider {...settings}>
           {projects?.map((project) => (
-            <div key={project._id}>
+            <div className="px-2" key={project._id}>
               <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
                 <figure className="overflow-hidden ">
                   <img
@@ -51,24 +91,32 @@ const Portfolio = () => {
                     ))}
                   </div>
                   <div className="text-right flex gap-2">
-                    <Link
-                      to={project?.liveLink}
-                      className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
-                    >
-                      <IoIosLink className="text-xl text-zinc-800" />
-                    </Link>
-                    <Link
-                      to={project?.repoLink}
-                      className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
-                    >
-                      <FaGithub className="text-xl text-zinc-800" />
-                    </Link>
+                    {project?.liveLink && (
+                      <Link
+                        to={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
+                      >
+                        <IoIosLink className="text-xl text-zinc-800" />
+                      </Link>
+                    )}
+                    {project?.repoLink && (
+                      <Link
+                        to={project.repoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
+                      >
+                        <FaGithub className="text-xl text-zinc-800" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
+        </Slider>
       </Container>
     </div>
   );

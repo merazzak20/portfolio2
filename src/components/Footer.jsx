@@ -8,7 +8,9 @@ const Footer = () => {
       <Container>
         <footer className="footer footer-center bg-zinc-900 text-zinc-50 p-10">
           <aside>
-            <img className="w-52" src={logo} alt="" />
+            <a href="/">
+              <img className="w-52" src={logo} alt="" />
+            </a>
             <p className="font-bold -mt-4">
               <span className="text-base">Full stack developer</span>
               <br />

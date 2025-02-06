@@ -14,7 +14,14 @@ const Header = () => {
   const links = (
     <>
       <li>
-        <Link to="/about">About</Link>
+        <NavLink
+          className={({ isActive }) =>
+            `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
+          }
+          to="/about"
+        >
+          About
+        </NavLink>
       </li>
       {user && (
         <li>
@@ -27,12 +34,14 @@ const Header = () => {
   const mobileLinks = (
     <>
       <li>
-        <Link to="/">
-          <img className="w-3/12 mx-auto" src={logo} alt="Abdur Razzak" />
-        </Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
+        <NavLink
+          className={({ isActive }) =>
+            `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
+          }
+          to="/about"
+        >
+          About
+        </NavLink>
       </li>
       {user && (
         <li>
@@ -63,14 +72,17 @@ const Header = () => {
           </div>
 
           {/* Horizontal Links */}
-          {/* <div className="navbar-center hidden lg:flex">
+          <div className="navbar-center hidden md:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
-          </div> */}
+          </div>
 
           {/* Download Resume Button */}
-          <div className="navbar-end">
-            <ul className="menu menu-horizontal px-1">{links}</ul>
+          <div className="navbar-end flex flex-row">
             <div className="hidden md:inline-block">
+              {/* <div className="">
+                <ul className="menu menu-horizontal px-1">{links}</ul>
+              </div> */}
+
               <a
                 href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view?usp=sharing"
                 target="_blank"
