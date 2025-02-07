@@ -49,6 +49,7 @@ const Header = () => {
           className={({ isActive }) =>
             `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
           }
+          onClick={() => setIsOpen(false)}
           to="/"
         >
           Home
@@ -59,6 +60,7 @@ const Header = () => {
           className={({ isActive }) =>
             `hover:text-lime-400 ${isActive ? "text-lime-400" : "text-white"}`
           }
+          onClick={() => setIsOpen(false)}
           to="/about"
         >
           About

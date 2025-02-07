@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <section>
+    <section id="About">
       <Container>
         <div className="my-5 hidden md:block text-center">
           <SectionTitle sectionName={"About Me"}></SectionTitle>

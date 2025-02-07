@@ -7,6 +7,7 @@ import { FaFacebookSquare, FaGithub } from "react-icons/fa";
 import { ImBehance2 } from "react-icons/im";
 import Marquee from "react-fast-marquee";
 import { FaDownload, FaLinkedinIn } from "react-icons/fa6";
+import { TbArrowLoopRight2 } from "react-icons/tb";
 import Container from "./Shared/Container";
 
 const Hero = () => {
@@ -15,7 +16,7 @@ const Hero = () => {
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center sm:pt-12 md:pt-0">
         <div className="col-span-12 lg:col-span-5 hidden lg:block">
           <img
-            className="sm:w-3/4 mx-auto md:w-full text-center"
+            className="sm:w-3/4 mx-auto md:w-full pt-10 text-center"
             src={image}
             alt="Abdur Razzak Portait"
           />
@@ -27,13 +28,21 @@ const Hero = () => {
             Abdur Razzak
           </h1>
           <h4 className="text-xl mb-3">A MERN Stack Developer.</h4>
-          {/* <a
-              href="https://drive.google.com/file/d/17rehO2G9AXlp3cMFs1UCXEcq0Fvzv-Gn/view"
+          <div className="space-x-2">
+            <a
+              href="https://drive.google.com/file/d/1PFXraJNWyzpTFun3tzu1ZarCrqr9hY8j/view"
               target="_blank"
-              className="btn btn-outline rounded-full text-[#afd138] hover:bg-[#afd138]"
+              className="btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
             >
               Download Resume <FaDownload></FaDownload>
-            </a> */}
+            </a>
+            <a
+              href="#About"
+              className="btn btn-outline rounded-none text-[#afd138] hover:bg-[#afd138]"
+            >
+              Learn More <TbArrowLoopRight2 className="text-xl" />
+            </a>
+          </div>
           <Marquee speed={40} className="mt-4">
             "Crafting seamless digital experiences, one line of code at a time."
             - "Where creativity meets code welcome to my portfolio." - "Turning

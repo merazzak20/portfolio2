@@ -14,11 +14,11 @@ const AboutPage = () => {
           <div className="mx-auto p-6 md:p-12">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               {/* Left Column - Profile Image */}
-              <div className="flex justify-evenly col-span-4">
+              <div className="flex justify-center col-span-4">
                 <img
                   src={me}
                   alt="Abdur Razzak"
-                  className="w-72 md:w-96 rounded-lg mt-4 shadow-lg"
+                  className="w-full md:w-96 text-center rounded-lg mt-4 shadow-lg"
                 />
               </div>
 
