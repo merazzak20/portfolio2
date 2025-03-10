@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { IoIosLink } from "react-icons/io";
 import { MdReadMore } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { FaGithub } from "react-icons/fa";
+import { FaArrowRight, FaGithub } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -119,6 +119,14 @@ const Portfolio = () => {
                         className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
                       >
                         <FaGithub className="text-xl text-zinc-800" />
+                      </Link>
+                    )}
+                    {project?._id && (
+                      <Link
+                        to={project._id}
+                        className="bg-[#AFD138] border-none rounded-lg btn btn-sm hover:bg-[#99b825]"
+                      >
+                        <FaArrowRight className="text-xl text-zinc-800" />
                       </Link>
                     )}
                   </div>

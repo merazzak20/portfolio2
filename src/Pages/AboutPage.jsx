@@ -24,7 +24,7 @@ const AboutPage = () => {
 
               {/* Right Column - Introduction */}
               <div className="text-left col-span-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#AFD138]">
+                <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#c0eb4a] to-zinc-950 bg-clip-text text-transparent">
                   About Me
                 </h2>
 
@@ -45,7 +45,7 @@ const AboutPage = () => {
                   together!
                 </p>
 
-                <h2 className="text-xl md:text-2xl font-bold text-[#AFD138] mt-2">
+                <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#c0eb4a] to-zinc-950 bg-clip-text text-transparent mt-2">
                   My Learning Journey
                 </h2>
                 <p className="mt-4 text-gray-300 text-justify leading-relaxed">

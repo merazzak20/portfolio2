@@ -44,7 +44,7 @@ const About = () => {
               and CSS, and soon diving into JavaScript to bring ideas to life.
             </p>
             <Link to="/about">
-              <button className="btn bg-[#afd138] rounded-none border-none btn-sm mt-4 hover:bg-[#aed936]">
+              <button className="btn bg-[#afd138] text-zinc-800 rounded-none border-none btn-sm mt-4 hover:bg-[#aed936]">
                 Learn More
               </button>
             </Link>

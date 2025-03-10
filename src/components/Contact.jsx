@@ -149,13 +149,14 @@ const Contact = () => {
                   }
                   rows="4"
                   placeholder="message"
+                  style={{ resize: "none" }}
                   className="w-full px-4 py-2 border-none rounded-none focus:outline-none focus:ring-2 bg-zinc-900"
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#AFD138] text-zinc-800 font-semibold py-2 px-4 rounded-none hover:bg-[#9fbe31] transition"
+                className="w-full bg-[#afd138] text-zinc-800 font-semibold py-2 px-4 rounded-none hover:bg-[#9fbe31] transition"
               >
                 Send Message
               </button>

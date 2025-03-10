@@ -9,6 +9,7 @@ import AddFeedback from "../Pages/Dashboard/AdminRoutes/AddFeedback";
 import AllMessage from "../Pages/Dashboard/AdminRoutes/AllMessage";
 import PrivateRouter from "./PrivateRouter";
 import AboutPage from "../Pages/AboutPage";
+import SingleProject from "../components/SingleProject";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage></AboutPage>,
+      },
+      {
+        path: "/:id",
+        element: <SingleProject></SingleProject>,
       },
       // {
       //   path: "/register",
