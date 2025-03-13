@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import Container from "./Shared/Container";
 
-const SingleProject = () => {
+const singleProject2 = () => {
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
   const { data: project } = useQuery({
@@ -93,4 +93,4 @@ const SingleProject = () => {
   );
 };
 
-export default SingleProject;
+export default singleProject2;
