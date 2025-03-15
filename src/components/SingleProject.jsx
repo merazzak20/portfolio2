@@ -44,7 +44,12 @@ const SingleProject = () => {
           {/* left Content */}
           <div className="md:col-span-8 space-y-4">
             <SectionTitle
-              sectionName={"Short Description of this Project"}
+              sectionName={"Short description of this project"}
+            ></SectionTitle>
+            <p className="text-justify text-gray-300">{project?.details}</p>
+
+            <SectionTitle
+              sectionName={"Key features of this project"}
             ></SectionTitle>
 
             <p className="text-justify text-gray-300">{project?.details}</p>
@@ -78,8 +83,8 @@ const SingleProject = () => {
             </div>
           </div>
           {/* Right Content (Information Panel) */}
-          <div className="bg-zinc-800 p-6 rounded-lg shadow-lg md:col-span-4 md:-mt-32">
-            <h3 className="text-xl font-semibold mb-4">Information</h3>
+          <div className="bg-zinc-800 p-6 pt-8 rounded-lg shadow-lg md:col-span-4 md:-mt-32">
+            <h3 className="text-xl font-semibold mt-8 mb-4">Information</h3>
             <div className="space-y-4">
               <p>
                 <span className="font-bold text-gray-300">Project Name:</span>{" "}
