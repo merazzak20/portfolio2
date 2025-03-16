@@ -5,6 +5,7 @@ import { FaFacebookSquare, FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { ImBehance2 } from "react-icons/im";
 import Education from "../components/Education";
 import UserFeedback from "../components/UserFeedback";
+import Certificates from "../components/Certificates";
 
 const AboutPage = () => {
   return (
@@ -99,6 +100,7 @@ const AboutPage = () => {
           </div>
         </section>
         <Education></Education>
+        <Certificates></Certificates>
         <UserFeedback></UserFeedback>
       </Container>
     </div>
