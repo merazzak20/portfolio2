@@ -10,6 +10,7 @@ import AllMessage from "../Pages/Dashboard/AdminRoutes/AllMessage";
 import PrivateRouter from "./PrivateRouter";
 import AboutPage from "../Pages/AboutPage";
 import SingleProject from "../components/SingleProject";
+import AddCertificate from "../Pages/Dashboard/AdminRoutes/AddCertificate";
 
 export const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
       {
         path: "addFeedback",
         element: <AddFeedback></AddFeedback>,
+      },
+      {
+        path: "addCertificate",
+        element: <AddCertificate></AddCertificate>,
       },
       {
         path: "allMessages",

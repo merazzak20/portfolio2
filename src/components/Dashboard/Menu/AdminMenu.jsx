@@ -1,7 +1,7 @@
 import React from "react";
 import MenuItem from "./MenuItem";
 import { MdAssignmentAdd, MdMessage } from "react-icons/md";
-import { GrArticle } from "react-icons/gr";
+import { GrArticle, GrCertificate } from "react-icons/gr";
 
 const AdminMenu = () => {
   return (
@@ -14,6 +14,11 @@ const AdminMenu = () => {
         address="/dashboard"
       />
       <MenuItem icon={GrArticle} label="Add Feedback" address="addFeedback" />
+      <MenuItem
+        icon={GrCertificate}
+        label="Add Certificate"
+        address="addCertificate"
+      />
       <MenuItem icon={MdMessage} label="All Messages" address="allMessages" />
     </>
   );
