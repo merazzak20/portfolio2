@@ -5,28 +5,20 @@ import SectionTitle from "./Shared/SectionTitle";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const certificates = [
-  {
-    id: 1,
-    title: "Web Development Certificate",
-    image:
-      "https://marketplace.canva.com/EAFy42rCTA0/1/0/1600w/canva-blue-minimalist-certificate-of-achievement-_asVJz8YgJE.jpg", // Replace with actual certificate image URL
-  },
-  {
-    id: 2,
-    title: "JavaScript Mastery",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 3,
-    title: "React Advanced Certification",
-    image: "https://via.placeholder.com/300",
-  },
-];
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 const Certificates = () => {
-  const [selectedCertificate, setSelectedCertificate] = useState(null);
+  // const [selectedCertificate, setSelectedCertificate] = useState(null);
+  const axiosPublic = useAxiosPublic();
+  const { data: certificates } = useQuery({
+    queryKey: ["certificates"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/certificate");
+      return res.data;
+    },
+  });
+  console.log(certificates);
 
   var settings = {
     // dots: true,
@@ -87,8 +79,8 @@ const Certificates = () => {
           </div>
 
           <Slider {...settings}>
-            {certificates.map((certificate) => (
-              <div className="px-2" key={certificate.id}>
+            {certificates?.map((certificate) => (
+              <div className="px-2" key={certificate._id}>
                 <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
                   <figure className="overflow-hidden ">
                     <img
@@ -101,7 +93,7 @@ const Certificates = () => {
                     <h2 className="card-title text-zinc-50 font-bold">
                       {certificate?.title}
                     </h2>
-                    <p>{certificate?.details?.slice(0, 110)}...</p>
+                    <p>{certificate?.platform}</p>
                   </div>
                 </div>
               </div>
