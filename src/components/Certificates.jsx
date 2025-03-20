@@ -9,7 +9,6 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 
 const Certificates = () => {
-  // const [selectedCertificate, setSelectedCertificate] = useState(null);
   const axiosPublic = useAxiosPublic();
   const { data: certificates } = useQuery({
     queryKey: ["certificates"],
@@ -25,8 +24,8 @@ const Certificates = () => {
     infinite: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 2000,
-    speed: 500,
+    autoplaySpeed: 2500,
+    speed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
@@ -83,7 +82,7 @@ const Certificates = () => {
               <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
                 <figure className="overflow-hidden ">
                   <img
-                    className=" group-hover:scale-110 transition rounded-md"
+                    className=" group-hover:scale-110 transition rounded-md w-full md:h-[280px]"
                     src={certificate?.image}
                     alt={certificate?.title}
                   />
@@ -92,7 +91,7 @@ const Certificates = () => {
                   <h2 className="card-title text-zinc-50 font-bold">
                     {certificate?.title}
                   </h2>
-                  <p>{certificate?.patform}</p>
+                  <p>{certificate?.platform}</p>
                 </div>
               </div>
             </div>
