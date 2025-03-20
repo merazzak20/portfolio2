@@ -71,54 +71,36 @@ const Certificates = () => {
   return (
     <div>
       <Container>
-        <div className="">
-          <div className="my-5">
-            <SectionTitle
-              sectionName={"Professional Certificates & License"}
-            ></SectionTitle>
-          </div>
+        <div className="my-5">
+          <SectionTitle
+            sectionName={"Professional Certificates & License"}
+          ></SectionTitle>
+        </div>
 
-          <Slider {...settings}>
-            {certificates?.map((certificate) => (
-              <div className="px-2" key={certificate._id}>
-                <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
-                  <figure className="overflow-hidden ">
-                    <img
-                      className=" group-hover:scale-110 transition rounded-md"
-                      src={certificate?.image}
-                      alt={certificate?.title}
-                    />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title text-zinc-50 font-bold">
-                      {certificate?.title}
-                    </h2>
-                    <p>{certificate?.platform}</p>
-                  </div>
+        <Slider {...settings}>
+          {certificates?.map((certificate) => (
+            <div className="px-2" key={certificate._id}>
+              <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
+                <figure className="overflow-hidden ">
+                  <img
+                    className=" group-hover:scale-110 transition rounded-md"
+                    src={certificate?.image}
+                    alt={certificate?.title}
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title text-zinc-50 font-bold">
+                    {certificate?.title}
+                  </h2>
+                  <p>{certificate?.patform}</p>
                 </div>
               </div>
-              //   <div
-              //     key={certificate.id}
-              //     className="border rounded-lg shadow-md p-2 mx-2 cursor-pointer hover:shadow-lg transition"
-              //     // onClick={() => setSelectedCertificate(certificate)}
-              //   >
-              //     <img
-              //       src={certificate.image}
-              //       alt={certificate.title}
-              //       className="w-full h-48 object-cover rounded-md"
-              //     />
-              //     <h3 className="text-lg font-semibold mt-3">
-              //       {certificate.title}
-              //     </h3>
-              //     <h4 className="text-md font-semibold text-zinc-400">
-              //       platform
-              //     </h4>
-              //   </div>
-            ))}
-          </Slider>
+            </div>
+          ))}
+        </Slider>
 
-          {/* Modal for Certificate Preview */}
-          {/* {selectedCertificate && (
+        {/* Modal for Certificate Preview */}
+        {/* {selectedCertificate && (
             <Dialog
               open={!!selectedCertificate}
               onClose={() => setSelectedCertificate(null)}
@@ -142,7 +124,6 @@ const Certificates = () => {
               </div>
             </Dialog>
           )} */}
-        </div>
       </Container>
     </div>
   );

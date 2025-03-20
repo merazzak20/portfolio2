@@ -7,10 +7,14 @@ const Addprojects = () => {
   const axiosPublic = useAxiosPublic();
   const [formData, setFormData] = useState({
     title: "",
+    subTitle: "",
+    client: "",
+    duration: "",
     liveLink: "",
     repoLink: "",
     tags: "",
     details: "",
+    features: "",
   });
   // console.log(formData.title);
   const { title, liveLink, repoLink, tags, details } = formData;
@@ -30,10 +34,14 @@ const Addprojects = () => {
     const projectInfo = {
       imgSrc: photoURL,
       title,
+      client,
+      duration,
+      subTitle,
       liveLink,
       repoLink,
       tags,
       details,
+      features,
     };
 
     try {
@@ -71,6 +79,28 @@ const Addprojects = () => {
           />
         </div>
 
+        {/* project Sub Title */}
+        <div>
+          <label
+            htmlFor="subTitle"
+            className="block text-lg font-medium text-gray-700"
+          >
+            Sub Title
+          </label>
+          <input
+            type="text"
+            id="subTitle"
+            name="subTitle"
+            onChange={(e) =>
+              setFormData({ ...formData, subTitle: e.target.value })
+            }
+            value={formData.subTitle}
+            placeholder="Sub title"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            required
+          />
+        </div>
+
         {/* Image */}
         <div>
           <label
@@ -87,6 +117,52 @@ const Addprojects = () => {
             className="file-input file-input-bordered w-full rounded-none"
             required
           />
+        </div>
+
+        <div>
+          {/* Client */}
+          <div>
+            <label
+              htmlFor="client"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Client Name
+            </label>
+            <input
+              type="text"
+              id="client"
+              name="client"
+              placeholder="Enter client name"
+              onChange={(e) =>
+                setFormData({ ...formData, client: e.target.value })
+              }
+              value={formData.client}
+              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              required
+            />
+          </div>
+
+          {/* Duration */}
+          <div>
+            <label
+              htmlFor="duration"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Client Name
+            </label>
+            <input
+              type="text"
+              id="duration"
+              name="duration"
+              placeholder="Enter duration name"
+              onChange={(e) =>
+                setFormData({ ...formData, duration: e.target.value })
+              }
+              value={formData.duration}
+              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              required
+            />
+          </div>
         </div>
 
         {/* Live Link */}
@@ -170,6 +246,28 @@ const Addprojects = () => {
               setFormData({ ...formData, details: e.target.value })
             }
             value={formData.details}
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+        {/* Features */}
+        <div>
+          <label
+            htmlFor="features"
+            className="block text-lg font-medium text-gray-700"
+          >
+            Key Features
+          </label>
+          <textarea
+            id="features"
+            name="features"
+            placeholder="Enter project features"
+            onChange={(e) =>
+              setFormData({ ...formData, features: e.target.value })
+            }
+            value={formData.features}
             className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
             rows="4"
             required
