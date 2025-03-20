@@ -22,9 +22,7 @@ const SingleProject = () => {
         {/* Project Header */}
         <div className="text-center">
           <h2 className="text-4xl font-bold">{project?.title}</h2>
-          {/* <p className="text-sm text-gray-400 mt-2">
-            || {project?.category} - Non Profit Website
-          </p> */}
+          <p className="text-sm text-gray-400 mt-2">{project?.subTitle}</p>
         </div>
 
         {/* Grid Layout for Project Details */}
@@ -52,7 +50,7 @@ const SingleProject = () => {
               sectionName={"Key features of this project"}
             ></SectionTitle>
 
-            <p className="text-justify text-gray-300">{project?.details}</p>
+            <p className="text-justify text-gray-300">{project?.features}</p>
 
             {/* Tags Section */}
             <div className="flex flex-wrap gap-2">
@@ -95,8 +93,8 @@ const SingleProject = () => {
                 {project?.client || "Unknown"}
               </p>
               <p>
-                <span className="font-bold text-gray-300">Budget:</span>{" "}
-                {project?.budget || "N/A"}
+                <span className="font-bold text-gray-300">Duration:</span>{" "}
+                {project?.duration || "N/A"}
               </p>
             </div>
           </div>

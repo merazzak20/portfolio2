@@ -89,7 +89,7 @@ const Portfolio = () => {
                   <h2 className="card-title text-zinc-50 font-bold">
                     {project?.title}
                   </h2>
-                  <p>{project?.details?.slice(0, 110)}...</p>
+                  <p>{project?.details?.slice(0, 95)}...</p>
                   <div className="space-x-2">
                     {project?.tags?.map((tag, idx) => (
                       <div

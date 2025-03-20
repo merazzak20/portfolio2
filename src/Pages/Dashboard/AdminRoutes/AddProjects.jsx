@@ -17,7 +17,17 @@ const Addprojects = () => {
     features: "",
   });
   // console.log(formData.title);
-  const { title, liveLink, repoLink, tags, details } = formData;
+  const {
+    title,
+    liveLink,
+    repoLink,
+    tags,
+    client,
+    duration,
+    subTitle,
+    details,
+    features,
+  } = formData;
   // console.log(title, liveLink, repoLink, tags, details);
   const tag = tags.split(",").map((tag) => tag.trim());
   console.log(tag);
@@ -30,7 +40,7 @@ const Addprojects = () => {
     const photoURL = await uploadImage(image);
     console.log(photoURL);
     const tags = form.tags.value.split(",").map((tag) => tag.trim());
-    const details = form.details.value;
+    // const details = form.details.value;
     const projectInfo = {
       imgSrc: photoURL,
       title,
@@ -43,12 +53,14 @@ const Addprojects = () => {
       details,
       features,
     };
+    console.log(projectInfo);
 
     try {
       await axiosPublic.post("/projects", projectInfo);
       form.reset();
       toast.success("Successfuly Add.👍");
     } catch (err) {
+      console.log(err.message);
       toast.error(err.message);
     }
   };
@@ -119,9 +131,9 @@ const Addprojects = () => {
           />
         </div>
 
-        <div>
+        <div className="flex justify-between gap-3">
           {/* Client */}
-          <div>
+          <div className="w-full">
             <label
               htmlFor="client"
               className="block text-lg font-medium text-gray-700"
@@ -143,12 +155,12 @@ const Addprojects = () => {
           </div>
 
           {/* Duration */}
-          <div>
+          <div className="w-full">
             <label
               htmlFor="duration"
               className="block text-lg font-medium text-gray-700"
             >
-              Client Name
+              Duration
             </label>
             <input
               type="text"
