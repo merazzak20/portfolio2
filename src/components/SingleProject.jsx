@@ -4,17 +4,20 @@ import { Link, useParams } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import Container from "./Shared/Container";
 import SectionTitle from "./Shared/SectionTitle";
+import Loader from "./Shared/Loader";
 
 const SingleProject = () => {
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
-  const { data: project } = useQuery({
+  const { data: project, isLoading } = useQuery({
     queryKey: ["project", id],
     queryFn: async () => {
       const res = await axiosPublic.get(`/projects/${id}`);
       return res.data;
     },
   });
+
+  if (isLoading) return <Loader></Loader>;
 
   return (
     <div className="pt-20  text-white">
