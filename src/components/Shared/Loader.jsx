@@ -1,9 +1,15 @@
 import React from "react";
+import { InfinitySpin } from "react-loader-spinner";
 
 const Loader = () => {
   return (
     <div className="flex justify-center items-center h-screen">
-      <span className="loading loading-dots loading-2xl text-[#B6DF46]"></span>
+      <InfinitySpin
+        visible={true}
+        width="200"
+        color="#B6DF46"
+        ariaLabel="infinity-spin-loading"
+      />
     </div>
   );
 };
