@@ -4,18 +4,20 @@ import SectionTitle from "./Shared/SectionTitle";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import Loader from "./Shared/Loader";
 
 const Technologies = () => {
   const axiosPublic = useAxiosPublic();
-  const { data: skills } = useQuery({
+  const { data: skills, isLoading } = useQuery({
     queryKey: ["skills"],
     queryFn: async () => {
       const res = await axiosPublic.get("/technologies");
       return res.data;
     },
   });
+  // if (isLoading) return <Loader></Loader>;
 
-  console.log(skills);
+  // console.log(skills);
   return (
     <div className="my-16">
       <Container>

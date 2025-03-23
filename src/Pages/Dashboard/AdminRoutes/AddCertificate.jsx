@@ -8,8 +8,9 @@ const AddCertificate = () => {
   const [formData, setFormData] = useState({
     title: "",
     platform: "",
+    credential: "",
   });
-  const { title, platform } = formData;
+  const { title, platform, credential } = formData;
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,6 +21,7 @@ const AddCertificate = () => {
       image: photoURL,
       title,
       platform,
+      credential,
     };
     console.log(certificateInfo);
 
@@ -75,7 +77,7 @@ const AddCertificate = () => {
             onChange={(e) =>
               setFormData({ ...formData, platform: e.target.value })
             }
-            value={formData.name}
+            value={formData.platform}
             placeholder="Enter platform name"
             className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
             required
@@ -96,6 +98,27 @@ const AddCertificate = () => {
             name="image"
             accept="image/*"
             className="file-input file-input-bordered w-full rounded-none"
+          />
+        </div>
+
+        {/* Credentials */}
+        <div>
+          <label
+            htmlFor="credential"
+            className="block text-lg font-medium text-gray-700"
+          >
+            Platform
+          </label>
+          <input
+            type="url"
+            id="credential"
+            name="credential"
+            onChange={(e) =>
+              setFormData({ ...formData, credential: e.target.value })
+            }
+            value={formData.credential}
+            placeholder="Enter credential link"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
           />
         </div>
 

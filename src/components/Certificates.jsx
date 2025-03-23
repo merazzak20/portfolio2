@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 const Certificates = () => {
   const axiosPublic = useAxiosPublic();
@@ -78,23 +79,25 @@ const Certificates = () => {
 
         <Slider {...settings}>
           {certificates?.map((certificate) => (
-            <div className="px-2" key={certificate._id}>
-              <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
-                <figure className="overflow-hidden ">
-                  <img
-                    className=" group-hover:scale-110 transition rounded-md w-full md:h-[280px]"
-                    src={certificate?.image}
-                    alt={certificate?.title}
-                  />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title text-zinc-50 font-bold">
-                    {certificate?.title}
-                  </h2>
-                  <p>{certificate?.platform}</p>
+            <a href={certificate?.credential || ""} target="_blank">
+              <div className="px-2" key={certificate._id}>
+                <div className="card card-compact bg-zinc-900 shadow-xl border border-zinc-50/10 group p-2">
+                  <figure className="overflow-hidden ">
+                    <img
+                      className=" group-hover:scale-110 transition rounded-md w-full md:h-[280px]"
+                      src={certificate?.image}
+                      alt={certificate?.title}
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title text-zinc-50 font-bold">
+                      {certificate?.title}
+                    </h2>
+                    <p>{certificate?.platform}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </Slider>
 

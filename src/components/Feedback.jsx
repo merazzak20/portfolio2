@@ -8,17 +8,18 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import { useQuery } from "@tanstack/react-query";
+import Loader from "./Shared/Loader";
 
 const Feedback = () => {
   const axiosPublic = useAxiosPublic();
-  const { data: feedbacks } = useQuery({
+  const { data: feedbacks, isLoading } = useQuery({
     queryKey: ["feedbacks"],
     queryFn: async () => {
       const { data } = await axiosPublic.get("/feedbacks");
       return data;
     },
   });
-
+  if (isLoading) return <Loader></Loader>;
   return (
     <div>
       <Container>

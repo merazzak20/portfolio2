@@ -10,6 +10,7 @@ const Addprojects = () => {
     subTitle: "",
     client: "",
     duration: "",
+    developer: "",
     liveLink: "",
     repoLink: "",
     tags: "",
@@ -27,6 +28,7 @@ const Addprojects = () => {
     subTitle,
     details,
     features,
+    developer,
   } = formData;
   // console.log(title, liveLink, repoLink, tags, details);
   const tag = tags.split(",").map((tag) => tag.trim());
@@ -52,6 +54,7 @@ const Addprojects = () => {
       tags,
       details,
       features,
+      developer,
     };
     console.log(projectInfo);
 
@@ -131,6 +134,7 @@ const Addprojects = () => {
           />
         </div>
 
+        {/* client & duration */}
         <div className="flex justify-between gap-3">
           {/* Client */}
           <div className="w-full">
@@ -177,48 +181,73 @@ const Addprojects = () => {
           </div>
         </div>
 
-        {/* Live Link */}
+        {/* Developer */}
         <div>
           <label
-            htmlFor="live"
+            htmlFor="developer"
             className="block text-lg font-medium text-gray-700"
           >
-            Live Link
+            Developer
           </label>
           <input
-            type="url"
-            id="live"
-            name="live"
-            placeholder="Enter live link"
+            type="text"
+            id="developer"
+            name="developer"
             onChange={(e) =>
-              setFormData({ ...formData, liveLink: e.target.value })
+              setFormData({ ...formData, developer: e.target.value })
             }
-            value={formData.liveLink}
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+            value={formData.developer}
+            placeholder="Developer or Developers"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
             required
           />
         </div>
 
-        {/* Repo Link */}
-        <div>
-          <label
-            htmlFor="repo"
-            className="block text-lg font-medium text-gray-700"
-          >
-            Github Repository Link
-          </label>
-          <input
-            type="url"
-            id="repo"
-            name="repo"
-            placeholder="Enter live link"
-            onChange={(e) =>
-              setFormData({ ...formData, repoLink: e.target.value })
-            }
-            value={formData.repoLink}
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
-            required
-          />
+        {/* links */}
+        <div className="flex justify-between gap-3">
+          {/* Live Link */}
+          <div className="w-full">
+            <label
+              htmlFor="live"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Live Link
+            </label>
+            <input
+              type="url"
+              id="live"
+              name="live"
+              placeholder="Enter live link"
+              onChange={(e) =>
+                setFormData({ ...formData, liveLink: e.target.value })
+              }
+              value={formData.liveLink}
+              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              required
+            />
+          </div>
+
+          {/* Repo Link */}
+          <div className="w-full">
+            <label
+              htmlFor="repo"
+              className="block text-lg font-medium text-gray-700"
+            >
+              Github Repository Link
+            </label>
+            <input
+              type="url"
+              id="repo"
+              name="repo"
+              placeholder="Enter live link"
+              onChange={(e) =>
+                setFormData({ ...formData, repoLink: e.target.value })
+              }
+              value={formData.repoLink}
+              className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+              required
+            />
+          </div>
         </div>
 
         {/* project Tags */}
@@ -258,7 +287,7 @@ const Addprojects = () => {
               setFormData({ ...formData, details: e.target.value })
             }
             value={formData.details}
-            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
+            className="w-full px-4 pt-2 border border-gray-300 rounded-none focus:outline-none"
             rows="4"
             required
           ></textarea>

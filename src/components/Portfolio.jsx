@@ -10,17 +10,19 @@ import { FaArrowRight, FaGithub } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Loader from "./Shared/Loader";
 
 const Portfolio = () => {
   const axiosPublic = useAxiosPublic();
-  const { data: projects } = useQuery({
+  const { data: projects, isLoading } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
       const res = await axiosPublic.get("/projects");
       return res.data;
     },
   });
-  console.log(projects);
+  // if (isLoading) return <Loader></Loader>;
+  // console.log(projects);
   var settings = {
     // dots: true,
     infinite: true,
