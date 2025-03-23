@@ -30,3 +30,8 @@ body,
   background: #b9ff00;
   font-weight: bold;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  color: #b9ff00 !important;
+  font-size: 16px !important;
+}

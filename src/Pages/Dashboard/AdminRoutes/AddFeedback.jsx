@@ -8,8 +8,9 @@ const AddFeedback = () => {
   const [formData, setFormData] = useState({
     name: "",
     review: "",
+    title: "",
   });
-  const { name, review } = formData;
+  const { name, review, title } = formData;
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -23,12 +24,13 @@ const AddFeedback = () => {
       name,
       review,
       rating,
+      title,
     };
     // console.log(reviewInfo);
 
     try {
       await axiosPublic.post("/feedbacks", reviewInfo);
-      setFormData({ name: "", review: "" });
+      setFormData({ name: "", review: "", title: "" });
       form.reset();
       toast.success("Successfuly Add.👍");
     } catch (err) {
@@ -54,6 +56,28 @@ const AddFeedback = () => {
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             value={formData.name}
             placeholder="Enter client name"
+            className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+            required
+          />
+        </div>
+
+        {/* Title */}
+        <div>
+          <label
+            htmlFor="title"
+            className="block text-lg font-medium text-gray-700"
+          >
+            Designation with Organization
+          </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
+            value={formData.title}
+            placeholder="Student, DU / CEO, MindSprint"
             className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
             required
           />

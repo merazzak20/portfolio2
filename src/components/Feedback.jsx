@@ -2,19 +2,11 @@ import React from "react";
 import Container from "./Shared/Container";
 import SectionTitle from "./Shared/SectionTitle";
 import useAxiosPublic from "../hooks/useAxiosPublic";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-// import required modules
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
-import { Rating } from "@smastrom/react-rating";
-
-import "@smastrom/react-rating/style.css";
 import { useQuery } from "@tanstack/react-query";
 
 const Feedback = () => {
@@ -26,11 +18,12 @@ const Feedback = () => {
       return data;
     },
   });
+
   return (
     <div>
       <Container>
         <div className="my-14">
-          <SectionTitle sectionName={"What People Says"}></SectionTitle>
+          <SectionTitle sectionName={"What People Say"} />
         </div>
 
         <div>
@@ -43,40 +36,54 @@ const Feedback = () => {
             keyboard={true}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: false,
-              enabled: true,
+              disableOnInteraction: true,
             }}
             breakpoints={{
-              230: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
+              230: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-            className="mySwiper"
+            className="px-4"
           >
             {feedbacks?.map((feed) => (
-              <SwiperSlide className="px-20" key={feed?._id}>
-                <div className=" text-center flex flex-col items-center">
-                  <img
-                    className="w-20 h-20 rounded-full border-[#B9FF00] border-4 object-cover"
-                    src={feed?.image}
-                    alt={feed?.name}
-                  />
-                  <p className="text-2xl font-bold text-center my-3">
-                    {feed?.name}
+              <SwiperSlide key={feed?._id} className="px-10">
+                <div className="p-6 rounded-lg shadow-lg">
+                  {/* User Info */}
+                  <div className="flex gap-4 items-center">
+                    <img
+                      src={feed.image}
+                      alt={feed.name}
+                      className="w-16 h-16 border-[#B9FF00] border-2 object-cover rounded-full mb-4"
+                    />
+                    <div>
+                      <h2 className="text-lg font-semibold">{feed.name}</h2>
+                      <h4 className="text-gray-500 text-sm">
+                        {feed.title || ""}
+                      </h4>
+                    </div>
+                  </div>
+
+                  {/* Review Text */}
+                  <p className="mt-3 text-gray-600">
+                    {feed?.review.length > 100
+                      ? `${feed.review.slice(0, 100)}...`
+                      : feed?.review}
                   </p>
-                  <p>{feed?.review}</p>
-                  <Rating
-                    style={{ maxWidth: 180 }}
-                    value={parseFloat(feed.rating)}
-                    readOnly
-                  />
+
+                  {/* Rating */}
+                  <div className="mt-3 flex text-yellow-500">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span
+                        key={i}
+                        className={
+                          i < feed.rating ? "opacity-100" : "opacity-30"
+                        }
+                      >
+                        ★
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </SwiperSlide>
             ))}
