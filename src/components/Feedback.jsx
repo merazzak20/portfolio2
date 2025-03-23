@@ -44,10 +44,9 @@ const Feedback = () => {
               1024: { slidesPerView: 3 },
             }}
             modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-            className="px-4"
           >
             {feedbacks?.map((feed) => (
-              <SwiperSlide key={feed?._id} className="px-10">
+              <SwiperSlide key={feed?._id} className="px-6">
                 <div className="p-6 rounded-lg shadow-lg">
                   {/* User Info */}
                   <div className="flex gap-4 items-center">

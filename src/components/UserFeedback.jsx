@@ -77,7 +77,7 @@ const UserFeedback = () => {
             <div>
               <label
                 htmlFor="title"
-                className="block text-lg font-medium text-gray-700"
+                className="block text-lg font-medium text-zinc-300"
               >
                 Designation with Organization
               </label>
