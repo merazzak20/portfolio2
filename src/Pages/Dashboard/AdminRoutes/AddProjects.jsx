@@ -60,6 +60,18 @@ const Addprojects = () => {
 
     try {
       await axiosPublic.post("/projects", projectInfo);
+      setFormData({
+        title: "",
+        subTitle: "",
+        client: "",
+        duration: "",
+        developer: "",
+        liveLink: "",
+        repoLink: "",
+        tags: "",
+        details: "",
+        features: "",
+      });
       form.reset();
       toast.success("Successfuly Add.👍");
     } catch (err) {

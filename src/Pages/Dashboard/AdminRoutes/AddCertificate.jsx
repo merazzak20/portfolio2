@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 const AddCertificate = () => {
   const axiosPublic = useAxiosPublic();
+  const [pending, setPending] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     platform: "",
@@ -13,6 +14,7 @@ const AddCertificate = () => {
   const { title, platform, credential } = formData;
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setPending(true);
 
     const form = e.target;
     const image = form.image.files[0];
@@ -30,6 +32,7 @@ const AddCertificate = () => {
       setFormData({ title: "", platform: "" });
       form.reset();
       toast.success("Successfuly Add.👍");
+      setPending(false);
     } catch (err) {
       toast.error(err.message);
     }
@@ -107,7 +110,7 @@ const AddCertificate = () => {
             htmlFor="credential"
             className="block text-lg font-medium text-gray-700"
           >
-            Platform
+            Credential
           </label>
           <input
             type="url"
@@ -126,9 +129,16 @@ const AddCertificate = () => {
         <div>
           <button
             type="submit"
-            className="w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none "
+            className={`w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none ${
+              pending ? disabled : ""
+            }`}
+            disabled={pending}
           >
-            Add Certificate
+            {pending ? (
+              <span className="loading loading-dots loading-md"></span>
+            ) : (
+              "Add Certificate"
+            )}
           </button>
         </div>
       </form>

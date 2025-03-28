@@ -96,6 +96,10 @@ const SingleProject = () => {
                 {project?.client || "Unknown"}
               </p>
               <p>
+                <span className="font-bold text-gray-300">Developer:</span>{" "}
+                {project?.developer || "Unknown"}
+              </p>
+              <p>
                 <span className="font-bold text-gray-300">Duration:</span>{" "}
                 {project?.duration || "N/A"}
               </p>
