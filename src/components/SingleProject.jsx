@@ -33,9 +33,10 @@ const SingleProject = () => {
           {/* Left Content (Project Details & Image) */}
           <div className="max-h-[70vh]">
             <img
-              className="rounded-lg shadow-md w-full max-h-[70vh] object-cover"
+              className="rounded-lg shadow-md w-full max-h-[60vh] object-contain"
               src={project?.imgSrc}
               alt={project?.title}
+              loading="lazy"
             />
           </div>
         </div>
