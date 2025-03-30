@@ -4,9 +4,11 @@ import SectionTitle from "./Shared/SectionTitle";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { uploadImage } from "./API/utils";
 import toast from "react-hot-toast";
+import ButtonLoader from "./Shared/ButtonLoader";
 
 const UserFeedback = () => {
   const axiosPublic = useAxiosPublic();
+  const [pending, setPending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     review: "",
@@ -15,6 +17,7 @@ const UserFeedback = () => {
   const { name, review, title } = formData;
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setPending(true);
 
     const form = e.target;
     const image = form.image.files[0];
@@ -35,6 +38,7 @@ const UserFeedback = () => {
       setFormData({ name: "", review: "" });
       form.reset();
       toast.success("Successfully Submit.👍");
+      setPending(false);
     } catch (err) {
       toast.error(err.message);
     }
@@ -55,7 +59,7 @@ const UserFeedback = () => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-lg font-medium text-zinc-300"
+                className="block text-md font-medium text-zinc-300"
               >
                 Name
               </label>
@@ -68,7 +72,7 @@ const UserFeedback = () => {
                 }
                 value={formData.name}
                 placeholder="Enter client name"
-                className="w-full px-4 py-2 border text-zinc-700 border-gray-300 rounded-none focus:outline-none"
+                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none"
                 required
               />
             </div>
@@ -77,7 +81,7 @@ const UserFeedback = () => {
             <div>
               <label
                 htmlFor="title"
-                className="block text-lg font-medium text-zinc-300"
+                className="block text-md font-medium text-zinc-300"
               >
                 Designation with Organization
               </label>
@@ -90,7 +94,7 @@ const UserFeedback = () => {
                 }
                 value={formData.title}
                 placeholder="Student, DU / CEO, MindSprint"
-                className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none "
+                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none "
                 required
               />
             </div>
@@ -99,7 +103,7 @@ const UserFeedback = () => {
             <div>
               <label
                 htmlFor="review"
-                className="block text-lg font-medium text-zinc-300"
+                className="block text-md font-medium text-zinc-300"
               >
                 Review
               </label>
@@ -111,7 +115,7 @@ const UserFeedback = () => {
                   setFormData({ ...formData, review: e.target.value })
                 }
                 value={formData.review}
-                className="w-full px-4 py-2 border border-gray-300 rounded-none text-zinc-700 focus:outline-none"
+                className="w-full px-4 py-2 border border-gray-800 rounded-none  focus:outline-none"
                 rows="4"
                 required
               ></textarea>
@@ -133,10 +137,9 @@ const UserFeedback = () => {
                 id="profileImage"
                 name="image"
                 accept="image/*"
-                className="file-input text-zinc-700 file-input-bordered w-full rounded-none"
+                className="file-input border-gray-800 file-input-bordered w-full rounded-none"
               />
             </div>
-
             {/* Rating */}
             <div>
               <label className="block text-lg font-medium text-zinc-300">
@@ -183,9 +186,11 @@ const UserFeedback = () => {
             <div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none"
+                className={`w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#acd43e] rounded-none hover:bg-[#acd43e] focus:outline-none ${
+                  pending ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Submit Review
+                {pending ? <ButtonLoader></ButtonLoader> : "Submit Review"}
               </button>
             </div>
           </div>

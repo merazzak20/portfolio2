@@ -13,7 +13,7 @@ const AdminMenu = () => {
         label="Add Project"
         address="/dashboard"
       />
-      <MenuItem icon={GrArticle} label="Add Feedback" address="addFeedback" />
+      {/* <MenuItem icon={GrArticle} label="Add Feedback" address="addFeedback" /> */}
       <MenuItem
         icon={GrCertificate}
         label="Add Certificate"

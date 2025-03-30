@@ -7,11 +7,12 @@ import toast from "react-hot-toast";
 import { AiOutlineMail, AiOutlineWhatsApp } from "react-icons/ai";
 import { FiMapPin } from "react-icons/fi";
 import emailjs from "@emailjs/browser";
+import ButtonLoader from "./Shared/ButtonLoader";
 
 const Contact = () => {
   const axiosPublic = useAxiosPublic();
   const { user, loading } = useContext(AuthContext);
-  console.log(loading);
+  const [pending, setPending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,6 +24,7 @@ const Contact = () => {
   // };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setPending(true);
     const userMessage = {
       name: formData.name,
       email: formData.email,
@@ -57,13 +59,14 @@ const Contact = () => {
         (formData.email = ""),
         (formData.message = "")
       );
-      toast.success("Successfully Send.👍");
+      toast.success("Your Message Successfully Send.👍");
+      setPending(false);
+      e.target.reset();
     } catch (err) {
       toast.error(err.message);
     }
 
-    console.log(userMessage);
-    e.target.reset();
+    // console.log(userMessage);
   };
   return (
     <div className="mt-14">
@@ -156,9 +159,11 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#afd138] text-zinc-800 font-semibold py-2 px-4 rounded-none hover:bg-[#9fbe31] transition"
+                className={`w-full bg-[#afd138] text-zinc-800 font-semibold py-2 px-4 rounded-none hover:bg-[#9fbe31] transition ${
+                  pending ? "opacity-50 cursor-not-allowed" : ""
+                }`}
               >
-                Send Message
+                {pending ? <ButtonLoader></ButtonLoader> : "Send Message"}
               </button>
             </form>
           </div>

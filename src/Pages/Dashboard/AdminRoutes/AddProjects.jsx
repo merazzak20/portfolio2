@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { uploadImage } from "../../../components/API/utils";
+import ButtonLoader from "../../../components/Shared/ButtonLoader";
 
 const Addprojects = () => {
   const axiosPublic = useAxiosPublic();
+  const [pending, setPending] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     subTitle: "",
@@ -36,6 +38,7 @@ const Addprojects = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setPending(true);
 
     const form = e.target;
     const image = form.image.files[0];
@@ -74,6 +77,7 @@ const Addprojects = () => {
       });
       form.reset();
       toast.success("Successfuly Add.👍");
+      setPending(false);
     } catch (err) {
       console.log(err.message);
       toast.error(err.message);
@@ -331,9 +335,11 @@ const Addprojects = () => {
         <div>
           <button
             type="submit"
-            className="w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none "
+            className={`w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none ${
+              pending ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
-            Add Project
+            {pending ? <ButtonLoader></ButtonLoader> : "Add Project"}
           </button>
         </div>
       </form>

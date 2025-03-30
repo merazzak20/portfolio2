@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import { uploadImage } from "../../../components/API/utils";
 import toast from "react-hot-toast";
+import ButtonLoader from "../../../components/Shared/ButtonLoader";
 
 const AddCertificate = () => {
   const axiosPublic = useAxiosPublic();
@@ -130,15 +131,10 @@ const AddCertificate = () => {
           <button
             type="submit"
             className={`w-full px-6 py-3 font-semibold text-zinc-800 bg-[#B9FF00] focus:bg-[#7fa712] rounded-none hover:bg-[#7fa712] focus:outline-none ${
-              pending ? disabled : ""
+              pending ? "opacity-50 cursor-not-allowed" : ""
             }`}
-            disabled={pending}
           >
-            {pending ? (
-              <span className="loading loading-dots loading-md"></span>
-            ) : (
-              "Add Certificate"
-            )}
+            {pending ? <ButtonLoader></ButtonLoader> : "Add Certificate"}
           </button>
         </div>
       </form>
