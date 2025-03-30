@@ -75,6 +75,10 @@ const Portfolio = () => {
       <Container>
         <div className="my-5">
           <SectionTitle sectionName={"My Portfolios"}></SectionTitle>
+          <p className="mt-2">
+            A portfolio of dynamic, responsive, and user-friendly web
+            applications crafted with passion and precision.
+          </p>
         </div>
         <Slider {...settings}>
           {projects?.map((project) => (

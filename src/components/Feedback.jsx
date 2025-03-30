@@ -25,6 +25,10 @@ const Feedback = () => {
       <Container>
         <div className="my-14">
           <SectionTitle sectionName={"What People Say"} />
+          <p className="mt-2">
+            Honest feedback from clients and colleagues who have experienced my
+            web development expertise, creativity, and commitment to excellence.
+          </p>
         </div>
 
         <div>
