@@ -23,6 +23,11 @@ body,
   margin: 0 auto;
 }
 
+.nav-link:hover {
+  background-color: transparent !important;
+  color: #b9ff00 !important;
+}
+
 .interFont {
   font-family: "Inter", serif;
 }
