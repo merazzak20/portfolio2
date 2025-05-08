@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "./Shared/Container";
 import SectionTitle from "./Shared/SectionTitle";
 import useAxiosPublic from "../hooks/useAxiosPublic";
@@ -9,6 +9,8 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "./Shared/Loader";
+import { FaCaretDown } from "react-icons/fa6";
+import { TiArrowSortedUp } from "react-icons/ti";
 
 const Feedback = () => {
   const axiosPublic = useAxiosPublic();
@@ -69,11 +71,14 @@ const Feedback = () => {
                   </div>
 
                   {/* Review Text */}
-                  <p className="mt-3 text-gray-600">
+                  {/* <p className="mt-3 text-gray-600">
                     {feed?.review.length > 100
                       ? `${feed.review.slice(0, 100)}...`
                       : feed?.review}
-                  </p>
+                  </p> */}
+
+                  {/* Review Text with Read More/Collapse */}
+                  <ReviewText review={feed?.review} />
 
                   {/* Rating */}
                   <div className="mt-3 flex text-yellow-500">
@@ -94,6 +99,26 @@ const Feedback = () => {
           </Swiper>
         </div>
       </Container>
+    </div>
+  );
+};
+
+const ReviewText = ({ review }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div>
+      <p className="mt-3 text-gray-600">
+        {isExpanded ? review : `${review?.slice(0, 100)}...`}
+      </p>
+      {review?.length > 100 && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="text-[#c0eb4a] mt-2 text-2xl"
+        >
+          {isExpanded ? <TiArrowSortedUp /> : <FaCaretDown />}
+        </button>
+      )}
     </div>
   );
 };
