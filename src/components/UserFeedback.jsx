@@ -158,13 +158,13 @@ const UserFeedback = () => {
                     name="rating-2"
                     value="2"
                     className="mask mask-star-2 bg-orange-300"
-                    defaultChecked
                   />
                   <input
                     type="radio"
                     name="rating-2"
                     value="3"
                     className="mask mask-star-2 bg-orange-300"
+                    defaultChecked
                   />
                   <input
                     type="radio"
