@@ -11,6 +11,7 @@ import PrivateRouter from "./PrivateRouter";
 import AboutPage from "../Pages/AboutPage";
 import SingleProject from "../components/SingleProject";
 import AddCertificate from "../Pages/Dashboard/AdminRoutes/AddCertificate";
+import AllFeedback from "../Pages/Dashboard/AdminRoutes/AllFeedback";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ export const router = createBrowserRouter([
       {
         path: "addFeedback",
         element: <AddFeedback></AddFeedback>,
+      },
+      {
+        path: "allFeedback",
+        element: <AllFeedback></AllFeedback>,
       },
       {
         path: "addCertificate",

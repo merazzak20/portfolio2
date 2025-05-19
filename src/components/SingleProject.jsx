@@ -5,6 +5,7 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 import Container from "./Shared/Container";
 import SectionTitle from "./Shared/SectionTitle";
 import Loader from "./Shared/Loader";
+import ab1 from "../../src/assets/ab1.png";
 
 const SingleProject = () => {
   const axiosPublic = useAxiosPublic();
@@ -86,6 +87,13 @@ const SingleProject = () => {
           </div>
           {/* Right Content (Information Panel) */}
           <div className="bg-zinc-800 p-6 pt-8 rounded-lg shadow-lg md:col-span-4 md:-mt-32">
+            {/* <div>
+              <img
+                className="w-2/3 mx-auto filter grayscale"
+                src={ab1}
+                alt="me"
+              />
+            </div> */}
             <h3 className="text-xl font-semibold mt-8 mb-4">Information</h3>
             <div className="space-y-4">
               <p>

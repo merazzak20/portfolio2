@@ -2,6 +2,7 @@ import React from "react";
 import MenuItem from "./MenuItem";
 import { MdAssignmentAdd, MdMessage } from "react-icons/md";
 import { GrArticle, GrCertificate } from "react-icons/gr";
+import { VscFeedback } from "react-icons/vsc";
 
 const AdminMenu = () => {
   return (
@@ -19,6 +20,8 @@ const AdminMenu = () => {
         label="Add Certificate"
         address="addCertificate"
       />
+
+      <MenuItem icon={VscFeedback} label="Feedbacks" address="allFeedback" />
       <MenuItem icon={MdMessage} label="All Messages" address="allMessages" />
     </>
   );

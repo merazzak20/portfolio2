@@ -109,7 +109,9 @@ const ReviewText = ({ review }) => {
   return (
     <div>
       <p className="mt-3 text-gray-600">
-        {isExpanded ? review : `${review?.slice(0, 100)}...`}
+        {isExpanded
+          ? review
+          : review?.slice(0, 100) + (review?.length > 100 ? "..." : "")}
       </p>
       {review?.length > 100 && (
         <button

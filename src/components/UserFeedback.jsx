@@ -51,7 +51,7 @@ const UserFeedback = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 text-zinc-500"
         >
           {/* Left Column */}
           <div className="space-y-6">
@@ -137,7 +137,7 @@ const UserFeedback = () => {
                 id="profileImage"
                 name="image"
                 accept="image/*"
-                className="file-input border-gray-800 file-input-bordered w-full rounded-none"
+                className="file-input border-gray-00 file-input-bordered w-full rounded-none"
               />
             </div>
             {/* Rating */}
