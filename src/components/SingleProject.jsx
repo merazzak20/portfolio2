@@ -6,6 +6,7 @@ import Container from "./Shared/Container";
 import SectionTitle from "./Shared/SectionTitle";
 import Loader from "./Shared/Loader";
 import ab1 from "../../src/assets/ab1.png";
+import Breadcrumb from "./Shared/Breadcrumb";
 
 const SingleProject = () => {
   const axiosPublic = useAxiosPublic();
@@ -24,6 +25,9 @@ const SingleProject = () => {
     <div className="pt-20  text-white">
       <Container>
         {/* Project Header */}
+        <div className="mx-auto text-center">
+          <Breadcrumb title={project?.title}></Breadcrumb>
+        </div>
         <div className="text-center">
           <h2 className="text-4xl font-bold">{project?.title}</h2>
           <p className="text-sm text-gray-400 mt-2">{project?.subTitle}</p>
