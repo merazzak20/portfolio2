@@ -3,7 +3,7 @@ import logo from "../assets/my logo.png";
 import { FaDownload } from "react-icons/fa6";
 import Container from "./Shared/Container";
 import { motion } from "framer-motion";
-import { Squash as Hamburger } from "hamburger-react";
+import { Sling as Hamburger } from "hamburger-react";
 import { X } from "lucide-react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, NavLink } from "react-router-dom";
@@ -14,8 +14,8 @@ const Header = () => {
   const links = (
     <>
       <li>
-      <NavLink
-      className="nav-link"
+        <NavLink
+          className="nav-link"
           style={({ isActive, isTransitioning }) => {
             return {
               background: isActive ? "transparent" : "",
@@ -31,15 +31,15 @@ const Header = () => {
       </li>
       <li>
         <NavLink
-        className="nav-link"
-        style={({isActive, isTransitioning}) => {
-          return{
+          className="nav-link"
+          style={({ isActive, isTransitioning }) => {
+            return {
               background: isActive ? "transparent" : "",
               fontWeight: isActive ? "bold" : "",
               color: isActive ? "#afd138" : "white",
               viewTransitionName: isTransitioning ? "slide" : "",
-          }
-        }}
+            };
+          }}
           to="/about"
         >
           About
@@ -48,7 +48,9 @@ const Header = () => {
 
       {user && (
         <li>
-          <a className="nav-link" href="/dashboard">Dashboard</a>
+          <a className="nav-link" href="/dashboard">
+            Dashboard
+          </a>
         </li>
       )}
     </>
@@ -138,19 +140,24 @@ const Header = () => {
             <motion.div
               initial={{ x: "100%" }} // Start off-screen (right side)
               animate={{ x: "40%" }} // Slide into view (left)
-              exit={{ x: "10%" }} // Slide out to the right when closing
+              exit={{ x: "100%" }} // Slide out to the right when closing
               transition={{ type: "tween", duration: 0.3 }}
               className="fixed inset-0 bg-zinc-900 bg-opacity-50 backdrop-blur-lg flex flex-col items-center text-white text-xl z-50"
             >
               {/* Close Button */}
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-5 left-5 text-white hover:text-[#B9FF00]"
-              >
-                <X size={40} />
+              <button className="absolute top-5 left-5 text-white hover:text-[#B9FF00]">
+                <X
+                  onClick={() => {
+                    console.log("hit");
+                    setIsOpen(false);
+                  }}
+                  size={40}
+                />
               </button>
 
-              <ul className=" absolute left-5 space-y-4 text-left pt-32">{mobileLinks}</ul>
+              <ul className=" absolute left-5 space-y-4 text-left pt-32">
+                {mobileLinks}
+              </ul>
             </motion.div>
           )}
         </div>
