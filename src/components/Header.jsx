@@ -145,10 +145,10 @@ const Header = () => {
               className="fixed inset-0 bg-zinc-900 bg-opacity-50 backdrop-blur-lg flex flex-col items-center text-white text-xl z-50"
             >
               {/* Close Button */}
-              <button className="absolute top-5 left-5 text-white hover:text-[#B9FF00]">
+              <button className="absolute top-5 left-5 z-10 text-white hover:text-[#B9FF00]">
                 <X
                   onClick={() => {
-                    console.log("hit");
+                    // console.log("hit");
                     setIsOpen(false);
                   }}
                   size={40}
