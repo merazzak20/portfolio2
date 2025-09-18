@@ -77,13 +77,13 @@ const UserFeedback = () => {
               />
             </div>
 
-            {/* Title */}
+            {/* occupation */}
             <div>
               <label
                 htmlFor="title"
                 className="block text-md font-medium text-zinc-300"
               >
-                Designation with Organization
+                Occupation
               </label>
               <input
                 type="text"
@@ -93,32 +93,54 @@ const UserFeedback = () => {
                   setFormData({ ...formData, title: e.target.value })
                 }
                 value={formData.title}
-                placeholder="Student, DU / CEO, MindSprint"
+                placeholder="MD / CEO"
                 className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none "
                 required
               />
             </div>
 
-            {/* Review */}
+            {/* position */}
             <div>
               <label
-                htmlFor="review"
+                htmlFor="title"
                 className="block text-md font-medium text-zinc-300"
               >
-                Review
+                Position of Occupation
               </label>
-              <textarea
-                id="review"
-                name="review"
-                placeholder="Enter client review"
+              <input
+                type="text"
+                id="title"
+                name="title"
                 onChange={(e) =>
-                  setFormData({ ...formData, review: e.target.value })
+                  setFormData({ ...formData, title: e.target.value })
                 }
-                value={formData.review}
-                className="w-full px-4 py-2 border border-gray-800 rounded-none  focus:outline-none"
-                rows="4"
+                value={formData.title}
+                placeholder="Google / Amazon"
+                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none "
                 required
-              ></textarea>
+              />
+            </div>
+
+            {/* country */}
+            <div>
+              <label
+                htmlFor="title"
+                className="block text-md font-medium text-zinc-300"
+              >
+                Region
+              </label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                onChange={(e) =>
+                  setFormData({ ...formData, title: e.target.value })
+                }
+                value={formData.title}
+                placeholder="USA / UK"
+                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none "
+                required
+              />
             </div>
           </div>
 
@@ -180,6 +202,28 @@ const UserFeedback = () => {
                   />
                 </div>
               </div>
+            </div>
+
+            {/* Review */}
+            <div>
+              <label
+                htmlFor="review"
+                className="block text-md font-medium text-zinc-300"
+              >
+                Review
+              </label>
+              <textarea
+                id="review"
+                name="review"
+                placeholder="Enter client review"
+                onChange={(e) =>
+                  setFormData({ ...formData, review: e.target.value })
+                }
+                value={formData.review}
+                className="w-full px-4 py-2 border border-gray-800 rounded-none  focus:outline-none"
+                rows="4"
+                required
+              ></textarea>
             </div>
 
             {/* Submit Button */}
