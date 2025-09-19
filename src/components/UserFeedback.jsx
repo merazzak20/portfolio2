@@ -12,9 +12,11 @@ const UserFeedback = () => {
   const [formData, setFormData] = useState({
     name: "",
     review: "",
-    title: "",
+    occupaion: "",
+    organization: "",
+    region: "",
   });
-  const { name, review, title } = formData;
+  const { name, review, occupaion, organization, region } = formData;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPending(true);
@@ -29,7 +31,9 @@ const UserFeedback = () => {
       name,
       review,
       rating,
-      title,
+      occupaion,
+      organization,
+      region,
     };
     // console.log(reviewInfo);
 
@@ -71,8 +75,8 @@ const UserFeedback = () => {
                   setFormData({ ...formData, name: e.target.value })
                 }
                 value={formData.name}
-                placeholder="Enter client name"
-                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none"
+                placeholder="Enter Your Name"
+                className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none focus:outline-none"
                 required
               />
             </div>
@@ -87,14 +91,14 @@ const UserFeedback = () => {
               </label>
               <input
                 type="text"
-                id="title"
-                name="title"
+                id="occupation"
+                name="occupation"
                 onChange={(e) =>
-                  setFormData({ ...formData, title: e.target.value })
+                  setFormData({ ...formData, occupation: e.target.value })
                 }
                 value={formData.title}
                 placeholder="MD / CEO"
-                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none "
+                className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none focus:outline-none "
                 required
               />
             </div>
@@ -105,18 +109,18 @@ const UserFeedback = () => {
                 htmlFor="title"
                 className="block text-md font-medium text-zinc-300"
               >
-                Position of Occupation
+                Organization
               </label>
               <input
                 type="text"
-                id="title"
-                name="title"
+                id="organization"
+                name="organization"
                 onChange={(e) =>
-                  setFormData({ ...formData, title: e.target.value })
+                  setFormData({ ...formData, organization: e.target.value })
                 }
                 value={formData.title}
                 placeholder="Google / Amazon"
-                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none "
+                className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none focus:outline-none "
                 required
               />
             </div>
@@ -131,14 +135,14 @@ const UserFeedback = () => {
               </label>
               <input
                 type="text"
-                id="title"
-                name="title"
+                id="region"
+                name="region"
                 onChange={(e) =>
-                  setFormData({ ...formData, title: e.target.value })
+                  setFormData({ ...formData, region: e.target.value })
                 }
                 value={formData.title}
                 placeholder="USA / UK"
-                className="w-full px-4 py-2 border border-gray-800 rounded-none focus:outline-none "
+                className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none focus:outline-none "
                 required
               />
             </div>
@@ -159,7 +163,7 @@ const UserFeedback = () => {
                 id="profileImage"
                 name="image"
                 accept="image/*"
-                className="file-input border-gray-00 file-input-bordered w-full rounded-none"
+                className="file-input border-gray-00 file-input-bordered text-zinc-300 w-full rounded-none"
               />
             </div>
             {/* Rating */}
@@ -220,7 +224,7 @@ const UserFeedback = () => {
                   setFormData({ ...formData, review: e.target.value })
                 }
                 value={formData.review}
-                className="w-full px-4 py-2 border border-gray-800 rounded-none  focus:outline-none"
+                className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none  focus:outline-none"
                 rows="4"
                 required
               ></textarea>
