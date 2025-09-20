@@ -12,11 +12,11 @@ const UserFeedback = () => {
   const [formData, setFormData] = useState({
     name: "",
     review: "",
-    occupaion: "",
+    occupation: "",
     organization: "",
     region: "",
   });
-  const { name, review, occupaion, organization, region } = formData;
+  const { name, review, occupation, organization, region } = formData;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPending(true);
@@ -31,7 +31,7 @@ const UserFeedback = () => {
       name,
       review,
       rating,
-      occupaion,
+      occupation,
       organization,
       region,
     };
@@ -96,7 +96,7 @@ const UserFeedback = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, occupation: e.target.value })
                 }
-                value={formData.title}
+                value={formData.occupation}
                 placeholder="MD / CEO"
                 className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none focus:outline-none "
                 required
@@ -118,7 +118,7 @@ const UserFeedback = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, organization: e.target.value })
                 }
-                value={formData.title}
+                value={formData.organization}
                 placeholder="Google / Amazon"
                 className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none focus:outline-none "
                 required
@@ -140,7 +140,7 @@ const UserFeedback = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, region: e.target.value })
                 }
-                value={formData.title}
+                value={formData.region}
                 placeholder="USA / UK"
                 className="w-full px-4 py-2 border border-gray-800 text-zinc-300 rounded-none focus:outline-none "
                 required
