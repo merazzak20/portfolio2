@@ -61,7 +61,7 @@ const Hero = () => {
             ideas into impactful web solutions." -
           </Marquee>
           {/* State */}
-          <div className="stats shadow bg-zinc-800/50">
+          {/* <div className="stats shadow bg-zinc-800/50">
             <div className="stat">
               <div className="stat-figure text-secondary">
                 <svg
@@ -126,7 +126,7 @@ const Hero = () => {
               <div className="stat-value">1,200</div>
               <div className="stat-desc">↘︎ 90 (14%)</div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* social icons */}

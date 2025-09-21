@@ -64,8 +64,11 @@ const Feedback = () => {
                     />
                     <div>
                       <h2 className="text-lg font-semibold">{feed.name}</h2>
+                      <h4 className="text-gray-500 text-sm font-semibold">
+                        {feed.occupation || ""}, {feed.organization || ""}
+                      </h4>
                       <h4 className="text-gray-500 text-sm">
-                        {feed.title || ""}
+                        {feed.region || ""}
                       </h4>
                     </div>
                   </div>
