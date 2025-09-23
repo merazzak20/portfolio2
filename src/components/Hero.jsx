@@ -3,7 +3,7 @@ import React from "react";
 import image from "../assets/webimage4.png";
 // import image from "../assets/webimage2.png";
 // import image from "../assets/webb.jpg";
-import { FaFacebookSquare, FaGithub } from "react-icons/fa";
+import { FaFacebookSquare, FaGithub, FaProjectDiagram } from "react-icons/fa";
 import { ImBehance2 } from "react-icons/im";
 import Marquee from "react-fast-marquee";
 import { FaDownload, FaLinkedinIn } from "react-icons/fa6";
@@ -60,23 +60,12 @@ const Hero = () => {
             - "Where creativity meets code welcome to my portfolio." - "Turning
             ideas into impactful web solutions." -
           </Marquee>
+
           {/* State */}
-          {/* <div className="stats shadow bg-zinc-800/50">
+          <div className="stats shadow bg-zinc-800/50 mt-3 rounded-md">
             <div className="stat">
-              <div className="stat-figure text-secondary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="inline-block h-8 w-8 stroke-current"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
-                </svg>
+              <div className="stat-figure text-white ">
+                <FaProjectDiagram className="text-2xl" />
               </div>
               <div className="stat-title">Total Projects</div>
               <div className="stat-value">
@@ -105,28 +94,7 @@ const Hero = () => {
               <div className="stat-value">4,200</div>
               <div className="stat-desc">↗︎ 400 (22%)</div>
             </div>
-
-            <div className="stat">
-              <div className="stat-figure text-secondary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="inline-block h-8 w-8 stroke-current"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
-                  ></path>
-                </svg>
-              </div>
-              <div className="stat-title">New Registers</div>
-              <div className="stat-value">1,200</div>
-              <div className="stat-desc">↘︎ 90 (14%)</div>
-            </div>
-          </div> */}
+          </div>
         </div>
 
         {/* social icons */}
