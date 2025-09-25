@@ -94,7 +94,7 @@ const Addprojects = () => {
             htmlFor="title"
             className="block text-lg font-medium text-gray-700"
           >
-            Project Name
+            Project Name*
           </label>
           <input
             type="text"
@@ -116,7 +116,7 @@ const Addprojects = () => {
             htmlFor="subTitle"
             className="block text-lg font-medium text-gray-700"
           >
-            Sub Title
+            Sub Title*
           </label>
           <input
             type="text"
@@ -138,7 +138,7 @@ const Addprojects = () => {
             className="block font-medium mb-2 text-gray-700"
             htmlFor="image"
           >
-            Project Image
+            Project Image*
           </label>
           <input
             type="file"
@@ -158,7 +158,7 @@ const Addprojects = () => {
               htmlFor="client"
               className="block text-lg font-medium text-gray-700"
             >
-              Client Name
+              Client Name*
             </label>
             <input
               type="text"
@@ -180,7 +180,7 @@ const Addprojects = () => {
               htmlFor="duration"
               className="block text-lg font-medium text-gray-700"
             >
-              Duration
+              Duration*
             </label>
             <input
               type="text"
@@ -203,7 +203,7 @@ const Addprojects = () => {
             htmlFor="developer"
             className="block text-lg font-medium text-gray-700"
           >
-            Developer
+            Developer*
           </label>
           <input
             type="text"
@@ -227,7 +227,7 @@ const Addprojects = () => {
               htmlFor="live"
               className="block text-lg font-medium text-gray-700"
             >
-              Live Link
+              Live Link*
             </label>
             <input
               type="url"
@@ -261,7 +261,7 @@ const Addprojects = () => {
               }
               value={formData.repoLink}
               className="w-full px-4 py-2 border border-gray-300 rounded-none focus:outline-none"
-              required
+              // required
             />
           </div>
         </div>
@@ -272,7 +272,7 @@ const Addprojects = () => {
             htmlFor="tags"
             className="block font-medium mb-2 text-gray-700"
           >
-            Tags (Comma-separated)
+            Tags (Comma-separated)*
           </label>
           <input
             type="text"
@@ -293,7 +293,7 @@ const Addprojects = () => {
             htmlFor="details"
             className="block text-lg font-medium text-gray-700"
           >
-            Details
+            Details*
           </label>
           <textarea
             id="details"
@@ -315,7 +315,7 @@ const Addprojects = () => {
             htmlFor="features"
             className="block text-lg font-medium text-gray-700"
           >
-            Key Features
+            Key Features*
           </label>
           <textarea
             id="features"

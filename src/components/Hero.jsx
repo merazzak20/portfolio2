@@ -3,12 +3,8 @@ import React from "react";
 import image from "../assets/webimage4.png";
 // import image from "../assets/webimage2.png";
 // import image from "../assets/webb.jpg";
-import {
-  FaFacebookSquare,
-  FaGithub,
-  FaGlobeAmericas,
-  FaProjectDiagram,
-} from "react-icons/fa";
+import { FaFacebookSquare, FaGithub, FaGlobeAmericas } from "react-icons/fa";
+import { CgWebsite } from "react-icons/cg";
 import { ImBehance2 } from "react-icons/im";
 import Marquee from "react-fast-marquee";
 import { FaDownload, FaLinkedinIn } from "react-icons/fa6";
@@ -94,11 +90,12 @@ const Hero = () => {
           <div className="stats shadow bg-zinc-800/50 mt-3 rounded-md">
             <div className="stat">
               <div className="stat-figure text-white ">
-                <FaProjectDiagram className="text-2xl" />
+                <CgWebsite className="text-2xl" />
               </div>
               <div className="stat-title">Already Completed</div>
-              <div className="stat-value">
+              <div className="stat-value flex items-center gap-2">
                 <CountUp className="text-white" end={projects?.length} />
+                {/* <p className="text-2xl text-white">Project</p> */}
               </div>
               <div className="stat-desc">Successful Projects</div>
             </div>
