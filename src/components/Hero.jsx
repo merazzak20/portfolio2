@@ -3,7 +3,12 @@ import React from "react";
 import image from "../assets/webimage4.png";
 // import image from "../assets/webimage2.png";
 // import image from "../assets/webb.jpg";
-import { FaFacebookSquare, FaGithub, FaProjectDiagram } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaGithub,
+  FaGlobeAmericas,
+  FaProjectDiagram,
+} from "react-icons/fa";
 import { ImBehance2 } from "react-icons/im";
 import Marquee from "react-fast-marquee";
 import { FaDownload, FaLinkedinIn } from "react-icons/fa6";
@@ -15,6 +20,7 @@ import CountUp from "react-countup";
 
 const Hero = () => {
   const axiosPublic = useAxiosPublic();
+  // Query for projects
   const { data: projects } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
@@ -22,7 +28,30 @@ const Hero = () => {
       return res.data;
     },
   });
-  console.log(projects?.length);
+
+  // Query for feedbacks
+  const { data: feedbacks } = useQuery({
+    queryKey: ["feedbacks"], // Unique key for the feedbacks query
+    queryFn: async () => {
+      const res = await axiosPublic.get("/feedbacks"); // Call the /feedbacks endpoint
+      return res.data;
+    },
+  });
+
+  const regions = feedbacks
+    ? [
+        ...new Set(
+          feedbacks
+            .filter((feedback) => feedback.region) // Ensure region exists and is not falsy
+            .map((feedback) => feedback.region.toLowerCase())
+        ),
+      ]
+    : [];
+
+  console.log(projects?.length); // Logs the number of projects
+  console.log(feedbacks); // Logs the number of feedbacks
+  console.log(regions);
+
   return (
     <Container>
       <section className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center sm:pt-12 md:pt-0">
@@ -67,32 +96,22 @@ const Hero = () => {
               <div className="stat-figure text-white ">
                 <FaProjectDiagram className="text-2xl" />
               </div>
-              <div className="stat-title">Total Projects</div>
+              <div className="stat-title">Already Completed</div>
               <div className="stat-value">
                 <CountUp className="text-white" end={projects?.length} />
               </div>
-              <div className="stat-desc">Jan 1st - Feb 1st</div>
+              <div className="stat-desc">Successful Projects</div>
             </div>
 
             <div className="stat">
-              <div className="stat-figure text-secondary">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="inline-block h-8 w-8 stroke-current"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                  ></path>
-                </svg>
+              <div className="stat-figure text-white">
+                <FaGlobeAmericas className="text-2xl" />
               </div>
-              <div className="stat-title">New Users</div>
-              <div className="stat-value">4,200</div>
-              <div className="stat-desc">↗︎ 400 (22%)</div>
+              <div className="stat-title">Provide Service </div>
+              <div className="stat-value">
+                <CountUp className="text-white" end={regions?.length} />
+              </div>
+              <div className="stat-desc">Countries All Over World</div>
             </div>
           </div>
         </div>
